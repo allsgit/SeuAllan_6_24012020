@@ -1,0 +1,74 @@
+@import "_variable.scss";
+@import "_placeholders.scss";
+
+body{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "DM sans";
+    width: 1140px;
+}
+
+.logo{
+    margin: 44.91px 0px 0 58px;
+
+}
+
+nav{
+    padding-top: 61px;
+    padding-right: 30px;
+}
+
+.label{
+    position: absolute;
+    background-color: white;
+    left: 49%;
+    background: #DB8876;
+    border-radius: 5px;
+    outline: none;
+    border: none;
+    padding: 8px 8px;
+    font-size: 18px;
+    font-weight: 700;
+    text-align: center;
+    display: none;
+
+}
+
+.searchButton{
+    position: relative;
+    background-color: white;
+    color: $primaryFontColor;
+    outline: none;
+    border: 0.5px solid #C4C4C4;
+    border-radius: 11px;
+    height: 22px;
+
+}
+
+header{
+    @extend %flexSpaceBetween;
+    width: 70vw;
+}
+
+main{
+    @extend %flexSpaceBetween;
+    flex-wrap: wrap;
+    background-color: grey;
+    width: 100vw;
+    
+    h1{
+        position: absolute;
+        right: 117px;
+        top: 30px;
+        font-weight: 400;
+        color: $primaryFontColor;
+    }
+    .thumb-Photographer{
+        margin: 30px;
+        width: 200px;
+        height: 310px;
+        background-color: lightcoral;
+
+    }
+}
