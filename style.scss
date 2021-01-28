@@ -122,3 +122,82 @@ main {
     color: #757575;
   }
 }
+
+// MODAL //
+.modal {
+  position: relative;
+  margin: 0 auto;
+  //height: 900px;
+  height: 830px;
+  width: 669px;
+  border-radius: 5px;
+  background: #db8876;
+  border-radius: 5px;
+
+  img{
+    position: absolute;
+    top: 35px;
+    right: 35px;
+  }
+  h1 {
+    padding: 15px 185px 0 35px;
+    font-family: DM Sans;
+    font-style: normal;
+    font-weight: normal;
+    font-size: 64px;
+    line-height: 83px;
+    margin: 0;
+  }
+  h2 {
+    font-size: 64px;
+    font-weight: 400;
+    margin: 0 35px 19px;
+  }
+
+  .firstname,
+  .lastname,
+  .mail {
+    width: 599px;
+    height: 100px;
+    display: flex;
+    flex-direction: column;
+    margin: 0 35px;
+    font-size: 36px;
+    color: #312e2e;
+    margin-top: 10px;
+ 
+    #prenom,
+    #nom,
+    #email {
+      height: 68px;
+      font-size: 20px;
+      padding-bottom: 0;
+    }
+  }
+  .user-message {
+    font-size: 36px;
+    color: #312e2e;
+    width: 599px;
+    height: 170px;
+    margin-top: 10px;
+
+    display: flex;
+    flex-direction: column;
+    margin: 0 35px;
+    #votre-message {
+      height: 170px;
+      padding: 0;
+    }
+  }
+  .send {
+    background-color: $primaryLinkColor;
+    color: white;
+    width: 170px;
+    height: 69px;
+    text-align: center;
+    border: none;
+    border-radius: 5px;
+    margin: 26px 0 0 35px;
+    outline: none;
+  }
+}

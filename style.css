@@ -138,4 +138,101 @@ main .grey {
   font-size: 9px;
   color: #757575;
 }
+
+.modal {
+  position: relative;
+  margin: 0 auto;
+  height: 830px;
+  width: 669px;
+  border-radius: 5px;
+  background: #db8876;
+  border-radius: 5px;
+}
+
+.modal img {
+  position: absolute;
+  top: 35px;
+  right: 35px;
+}
+
+.modal h1 {
+  padding: 15px 185px 0 35px;
+  font-family: DM Sans;
+  font-style: normal;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 83px;
+  margin: 0;
+}
+
+.modal h2 {
+  font-size: 64px;
+  font-weight: 400;
+  margin: 0 35px 19px;
+}
+
+.modal .firstname,
+.modal .lastname,
+.modal .mail {
+  width: 599px;
+  height: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 35px;
+  font-size: 36px;
+  color: #312e2e;
+  margin-top: 10px;
+}
+
+.modal .firstname #prenom,
+.modal .firstname #nom,
+.modal .firstname #email,
+.modal .lastname #prenom,
+.modal .lastname #nom,
+.modal .lastname #email,
+.modal .mail #prenom,
+.modal .mail #nom,
+.modal .mail #email {
+  height: 68px;
+  font-size: 20px;
+  padding-bottom: 0;
+}
+
+.modal .user-message {
+  font-size: 36px;
+  color: #312e2e;
+  width: 599px;
+  height: 170px;
+  margin-top: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin: 0 35px;
+}
+
+.modal .user-message #votre-message {
+  height: 170px;
+  padding: 0;
+}
+
+.modal .send {
+  background-color: #901C1C;
+  color: white;
+  width: 170px;
+  height: 69px;
+  text-align: center;
+  border: none;
+  border-radius: 5px;
+  margin: 26px 0 0 35px;
+  outline: none;
+}
 /*# sourceMappingURL=style.css.map */
