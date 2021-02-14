@@ -124,7 +124,7 @@ main {
 }
 
 // MODAL //
-.modal {
+#modal {
   position: relative;
   margin: 0 auto;
   //height: 900px;
@@ -133,8 +133,9 @@ main {
   border-radius: 5px;
   background: #db8876;
   border-radius: 5px;
+  display: block;
 
-  img{
+  img {
     position: absolute;
     top: 35px;
     right: 35px;
@@ -165,7 +166,7 @@ main {
     font-size: 36px;
     color: #312e2e;
     margin-top: 10px;
- 
+
     #prenom,
     #nom,
     #email {
@@ -199,5 +200,161 @@ main {
     border-radius: 5px;
     margin: 26px 0 0 35px;
     outline: none;
+  }
+}
+
+// photographer page //
+.photographer-header {
+  position: relative;
+  width: 1240px;
+  height: 313px;
+  background-color: #fafafa;
+  margin: 40px 100px 0 100px;
+  align-items: center;
+  .photographer-profile {
+    padding-left: 50px;
+
+    .photographer-name {
+      position: initial;
+      font-size: 64px;
+      font-weight: 400;
+      margin: 0;
+    }
+    p:nth-child(2) {
+      font-size: 24px;
+      color: $primaryLinkColor;
+      margin: 0;
+    }
+    p:nth-child(3) {
+      font-size: 18px;
+      color: #525252;
+      font-weight: 400;
+    }
+  }
+
+  .contact-me {
+    position: absolute;
+    top: 63px;
+    left: 450px;
+    width: 170px;
+    height: 69px;
+    background-color: $primaryLinkColor;
+    outline: none;
+    color: #ffffff;
+    border-radius: 5px;
+    border: none;
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+  }
+
+  .id-picture {
+    margin-right: 100px;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #c4c4c4;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      padding-right: 30px;
+    }
+  }
+}
+.short-by {
+  position: relative;
+  margin-left: 100px;
+  margin-top: 20px;
+  display: flex;
+}
+
+.dropdown-open {
+  position: absolute;
+  left: 60px;
+  height: 100px;
+  width: 100px;
+  margin-left: 20px;
+  border-radius: 5px;
+  background-color: $primaryLinkColor;
+  color: #ffffff;
+  font-weight: 18px;
+
+  ul {
+    margin: O;
+    padding: 6px 0 7px 13px;
+    font-weight: 700;
+    list-style: none;
+    text-decoration: none;
+    li {
+      line-height: 23, 44px;
+    }
+  }
+  .bar {
+    height: 1px;
+    width: 80%;
+    background-color: white;
+  }
+}
+.thumb-section {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  width: 100%;
+  margin: 58px 100px 0;
+
+  .thumb-img {
+    height: 351px;
+    width: 350px;
+    margin-right: 95px;
+    margin-bottom: 71px;
+    display: grid;
+    grid-template-columns: 232px 60px 40px 18px;
+    grid-template-rows: 300px 51px;
+    font-weight: 500;
+    font-size: 24px;
+  // picture name
+    :nth-child(2) {
+      color: $primaryFontColor;
+      margin-top: 10px;
+      grid-column-start: 1;
+      grid-column-end: 2;
+    }
+  // price
+    :nth-child(3) {
+      margin-top: 10px;
+      color: $primaryFontColor;
+      grid-column-start: 2;
+      grid-column-end: 3;
+    }
+  // number of like
+    :nth-child(4) {
+      padding-left: 10px;
+      margin-top: 10px;
+      color: $primaryFontColor;
+      grid-column-start: 3;
+      grid-column-end: 3;
+    }
+    // heart icon
+    :nth-child(5) {
+    height: 18.350000381469727px;
+    width: 17.5px;
+    left: 1.75px;
+    margin-top: 16px;
+      grid-column-start: 4;
+      grid-column-end: 5;
+    }
+
+
+
+    img {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+    }
   }
 }
