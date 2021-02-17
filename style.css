@@ -7,6 +7,19 @@ header, main .main-section {
           justify-content: space-between;
 }
 
+.component-header button {
+  width: 170px;
+  height: 69px;
+  background-color: #901C1C;
+  outline: none;
+  color: #ffffff;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 26px;
+}
+
 body {
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
@@ -70,7 +83,7 @@ main h1 {
   right: 100px;
   top: 30px;
   font-weight: 400;
-  color: #D3573C;
+  color: #901C1C;
 }
 
 main .main-section {
@@ -79,14 +92,14 @@ main .main-section {
   margin: 0 15px;
 }
 
-main .thumb-Photographer {
+main .thumb-photographer {
   margin: 6px;
   width: 350px;
   height: 400px;
   background-color: white;
 }
 
-main .thumb-Photographer h2 {
+main .thumb-photographer h2 {
   text-align: center;
   color: #D3573C;
   font-weight: 400;
@@ -94,7 +107,7 @@ main .thumb-Photographer h2 {
   margin: 20px 0 0 0;
 }
 
-main .thumb-Photographer .id-picture {
+main .thumb-photographer .id-picture {
   margin: 0 auto;
   width: 200px;
   height: 200px;
@@ -105,7 +118,7 @@ main .thumb-Photographer .id-picture {
           box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
 }
 
-main .thumb-Photographer .id-picture img {
+main .thumb-photographer .id-picture img {
   width: 100%;
   height: 100%;
   -o-object-fit: cover;
@@ -113,7 +126,7 @@ main .thumb-Photographer .id-picture img {
   padding-right: 30px;
 }
 
-main .thumb-Photographer .search-label {
+main .thumb-photographer .search-label {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -122,7 +135,7 @@ main .thumb-Photographer .search-label {
           justify-content: center;
 }
 
-main .thumb-Photographer .description {
+main .thumb-photographer .description {
   text-align: center;
   line-height: 13.04px;
   font-size: 10px;
@@ -257,11 +270,12 @@ main .grey {
   font-size: 64px;
   font-weight: 400;
   margin: 0;
+  color: #D3573C;
 }
 
 .photographer-header .photographer-profile p:nth-child(2) {
   font-size: 24px;
-  color: #901C1C;
+  color: #D3573C;
   margin: 0;
 }
 
@@ -317,32 +331,61 @@ main .grey {
 
 .dropdown-open {
   position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   left: 60px;
-  height: 100px;
-  width: 100px;
+  height: 170px;
+  width: 170px;
   margin-left: 20px;
   border-radius: 5px;
   background-color: #901C1C;
   color: #ffffff;
-  font-weight: 18px;
+  font-size: 14px;
 }
 
 .dropdown-open ul {
   margin: O;
-  padding: 6px 0 7px 13px;
+  padding: 0;
+  width: 100%;
   font-weight: 700;
   list-style: none;
   text-decoration: none;
+  text-align: left;
 }
 
-.dropdown-open ul li {
+.dropdown-open ul :first-child {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.dropdown-open ul :first-child img {
+  width: 16px;
+  height: 9.88px;
+  margin-right: 18px;
+}
+
+.dropdown-open ul li:not(.trait) {
   line-height: 23, 44px;
+  margin: 14px 0 20px;
+  padding-left: 20px;
 }
 
-.dropdown-open .bar {
+.dropdown-open .menu-underline {
   height: 1px;
-  width: 80%;
-  background-color: white;
+  width: 150px;
+  border: none;
+  background-color: #FFFFFF;
 }
 
 .thumb-section {
@@ -417,5 +460,251 @@ main .grey {
      object-fit: cover;
   height: 300px;
   width: 100%;
+}
+
+.component-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  margin-bottom: 0;
+}
+
+.component-header .component-nav {
+  margin-right: 80px;
+  margin-top: 170px;
+  margin-left: 550px;
+  padding: 0;
+}
+
+.component-header .formtext-area {
+  width: 599px;
+  height: 97px;
+  font-size: 36px;
+  margin: 60px 0 0 50px;
+}
+
+.component-header button {
+  padding: 0;
+  font-size: 18px;
+  width: 170px;
+}
+
+.photographer-stats {
+  width: 200px;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: -139px;
+  left: 233px;
+}
+
+.photographer-stats img {
+  height: 20px;
+  width: 18.35px;
+}
+
+.component-main {
+  position: relative;
+  margin-top: -70px;
+}
+
+.photographer-component {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+}
+
+.photographer-component .thumb-section {
+  width: 300px;
+}
+
+.photographer-component .thumb-photographer:not(:first-child) {
+  margin: 0;
+  width: auto;
+  margin: 60px 135px 0 50px;
+}
+
+.photographer-component .thumb-photographer:not(:first-child) .id-picture {
+  width: 200px;
+  height: 200px;
+}
+
+.main-container-component {
+  margin: 0 auto;
+  width: 1440px;
+}
+
+.main-container-component .photographer-header {
+  width: 1240px;
+}
+
+.main-container-component .photographer-header .id-picture {
+  margin-right: 50px;
+}
+
+.thumb-photographer-side {
+  width: 370px;
+  height: 400px;
+  background-color: white;
+  margin: 53px 0px 0 90px;
+}
+
+.thumb-photographer-side .description {
+  text-align: left;
+}
+
+.thumb-photographer-side .description :first-child {
+  font-size: 24px;
+  font-weight: 400;
+  margin-left: 8px;
+  margin-bottom: 0;
+}
+
+.thumb-photographer-side .description :nth-child(2) {
+  font-size: 18px;
+  font-weight: 400;
+  margin-left: 8px;
+  margin-top: 19px;
+  color: #525252;
+}
+
+.thumb-photographer-side h2 {
+  color: #D3573C;
+  font-weight: 400;
+  font-size: 64px;
+  margin: 39px 0 0 0px;
+}
+
+.thumb-photographer-side .id-picture {
+  margin-left: none;
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  overflow: hidden;
+  background: #c4c4c4;
+  -webkit-box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+          box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.25);
+}
+
+.thumb-photographer-side .id-picture img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  padding-right: 30px;
+}
+
+.thumb-photographer-side .search-label {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: start;
+  margin-left: 8px;
+}
+
+.component-nav {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.component-nav button {
+  margin-right: 30px;
+}
+
+.component-nav .dropdown-open {
+  position: initial;
+  margin-right: 43px;
+}
+
+@media (max-width: 640px) {
+  .label {
+    display: none;
+  }
+  .main-container {
+    width: 375px;
+    margin: 0;
+    padding: 0;
+  }
+  .logo {
+    margin: 40px 0 0 20px;
+    width: 150px;
+  }
+  .logo img {
+    width: 150px;
+    height: 37, 5px;
+  }
+  main h1 {
+    width: 100%;
+    left: 234px;
+    top: 53px;
+    font-size: 14px;
+    margin: 0;
+  }
+  main .thumb-Photographer :last-child {
+    margin-bottom: 30px;
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header .label {
+    top: 0;
+    left: 100px;
+  }
+  header nav {
+    margin: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 375px;
+    padding-top: 41px;
+    padding-right: 0;
+  }
+  header nav button {
+    margin: 6px 5px 0 0px;
+  }
+  header nav :first-child {
+    margin-left: 39px;
+  }
+  header nav :nth-child(4) {
+    margin-right: 51px;
+  }
+  header nav :nth-child(5) {
+    margin-left: 56px;
+    margin-right: 4px;
+  }
+  header nav :nth-child(6) {
+    margin-right: 4px;
+  }
 }
 /*# sourceMappingURL=style.css.map */
