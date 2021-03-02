@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap"
+      rel="stylesheet"
+    />
+    <title>Fish Eyes</title>
+  </head>
+  <body>
+    <div id="modal">
+      <h1>Contactez moi</h1>
+      <h2>Mimi Keel</h2>
+      <img id="close" src="/image/cross.png" alt="" />
+      <div class="firstname">
+        <label for="prenom">Prénom</label>
+        <input
+          type="prenom"
+          id="prenom"
+          name="prenom"
+          required
+          minlength="4"
+          maxlength="8"
+          size="10"
+        />
+      </div>
+      <div class="lastname">
+        <label for="nom">Nom</label>
+        <input
+          type="nom"
+          id="nom"
+          name="nom"
+          required
+          minlength="4"
+          maxlength="8"
+          size="10"
+        />
+      </div>
+
+      <div class="mail">
+        <label for="email">Email</label>
+        <input
+          type="email"
+          id="email"
+          name="email"
+          required
+          minlength="4"
+          maxlength="8"
+          size="10"
+        />
+      </div>
+
+      <div class="user-message">
+        <label for="votre-message" >Votre message</label>
+        <input
+          type="votre-message"
+          id="votre-message"
+          name="votre-message"
+          required
+          minlength="4"
+          maxlength="10"
+          size="10"
+        />
+      </div>
+
+      <button class="send">Envoyer</button>
+    </div>
+    <div class="main-container">
+
+      <header class="component-header">
+        <input class="formtext-area" type="text" placeholder="Prénom" />
+       
+        <nav class="component-nav">
+     
+          <button>Popularité</button>
+          <div class="dropdown-open">
+            <ul>
+              <li>Popularité <img src="/image/images/upArrow.png"></li>
+              <hr class="menu-underline"></span>
+              <li>Date</li>
+              <hr class="menu-underline"></span>
+              <li>Titre</li>
+          
+            </ul>
+          </div>
+          <button>Engager moi</button>
+          <button>Engager moi</button>
+        </nav>
+      </header>
+      <main class="component-main">
+        <div class="photographer-stats">
+          <button class="searchButton">#TAG NAME</button>
+          <p>70€</p>
+          <p>13</p>
+          <img class="heart-icon" src="/image/heart.png" alt="">
+                
+        </div>
+        <div class="logo">
+          <a href="index.html">
+            <img src="/image/images/Group.png" alt="Fisheye Home page" />
+          </a>
+        </div>
+        <section class="photographer-component"> <!---->
+          <section class="thumb-photographer-side">
+            <div class="id-picture">
+              <img
+                src="/image/Photographers ID Photos/MimiKeel.jpg"
+                alt=""
+              />
+            </div>
+            <h2>Mimi Keel</h2>
+            <div class="description">
+              <p class="red">London, Uk</p>
+              <p class="noir">Voir le beau dans le quotidien</p>
+            </div>
+            <div class="search-label">
+              <button class="searchButton">#Portrait</button>
+              
+            </div>
+          </section>
+          <div class="thumb-section">
+            <div class="thumb-img">
+              <img src="/image/Mimi/Animals_Rainbow.jpg" alt="" />
+              <p>Arc-en-cie</p>
+              <p>70€</p>
+              <p>13</p>
+              <img class="heart-icon" src="image/heart.png" alt="" />
+            </div>
+          </div>
+          <section class="thumb-photographer">
+            <div class="id-picture">
+              <img
+                src="/image/Photographers ID Photos/MimiKeel.jpg"
+                alt=""
+              />
+            </div>
+            <h2>Mimi Keel</h2>
+            <div class="description">
+              <p class="photographer-location"></p>
+              <p class="photographer-tag"></p>
+              <p class="photographer-price"></p>
+            </div>
+            <div class="search-label">
+              <button class="searchButton">#Portrait</button>
+              <button class="searchButton">#Travel</button>
+              <button class="searchButton">#Animals</button>
+              <button class="searchButton">#Events</button>
+            </div>
+          </section>
+        </section>
+        <header class="photographer-header component">
+          <div class="photographer-profile">
+            <h1 class="photographer-name">Mimi Keel</h1>
+            <p>London, Uk</p>
+            <p>Voir le beau dans le quotidien</p>
+            <div class="search-label">
+              <button class="searchButton">#Portrait</button>
+              <button class="searchButton">#Travel</button>
+              <button class="searchButton">#Animals</button>
+              <button class="searchButton">#Events</button>
+            </div>
+          </div>
+          <button class="contact-me">Engagez moi</button>
+          <div class="id-picture">
+            <img
+              src="/image/Photographers ID Photos/MimiKeel.jpg"
+              alt=""
+            />
+          </div>
+        </header>
+      </main>
+    </div>
+    <script src="/JS/app.js"></script>
+    <script src="/JS/class.js"></script>
+    <script src="/JS/form.js"></script>
+  </body>
+</html>

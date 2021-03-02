@@ -1,0 +1,66 @@
+// lightbox //
+#close-lightbox {
+  position: fixed;
+  margin: 0;
+  padding: 0;
+  width: 43px;
+  height: 43px;
+  right: 300px;
+  top: 100px;
+  background-image: url('/image/close_lightbox.png');
+  background-repeat: no-repeat;
+  z-index: 1000;
+  background-color: white;
+  opacity: 0.9;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+  &:hover {
+    opacity: 1;
+  }
+}
+
+.lightBox-container {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10000;
+
+  .navigation-next,
+  .navigation-back {
+    position: fixed;
+    width: 29px;
+    height: 100%;
+    margin: 0 300px;
+    background: url('/image/left-arrow.png') center center / 29px 48px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    transition: 0.2s;
+    &:hover {
+      opacity: 1;
+    }
+  }
+  .navigation-next {
+    right: 0;
+    transform: rotate(180deg);
+  }
+}
+.lightBox-modal {
+  width: 50%;
+  height: 80%;
+  margin: auto auto;
+
+  img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+  }
+  p {
+    margin: 0;
+  }
+}
