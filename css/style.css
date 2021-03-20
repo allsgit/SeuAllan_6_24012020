@@ -56,6 +56,7 @@ header, main .main-section {
   width: 100%;
   height: 100%;
   z-index: 10000;
+  display: none;
 }
 
 .lightBox-container .navigation-next,
@@ -104,6 +105,10 @@ a {
   text-decoration: none;
 }
 
+.test {
+  position: fixed;
+}
+
 button {
   cursor: pointer;
   border: none;
@@ -117,6 +122,7 @@ body {
   margin: 0;
   font-family: 'DM sans';
   position: relative;
+  overflow-x: hidden;
 }
 
 body button:hover {
@@ -160,6 +166,18 @@ nav {
   position: relative;
   background-color: white;
   color: #901C1C;
+  outline: none;
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+  height: 22px;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+
+.searchButton -active {
+  position: relative;
+  background-color: #901C1C;
+  color: white;
   outline: none;
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
@@ -601,15 +619,19 @@ main .thumb-photographer .photographer-price {
   font-size: 24px;
 }
 
-.thumb-section .thumb-img :nth-child(2) {
+.thumb-section .thumb-img .picture_name {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
   color: #D3573C;
-  margin-top: 10px;
+  margin-top: 12px;
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 2;
 }
 
-.thumb-section .thumb-img :nth-child(3) {
+.thumb-section .thumb-img .picture_price {
   margin-top: 10px;
   color: #D3573C;
   -ms-grid-column: 2;
@@ -617,16 +639,17 @@ main .thumb-photographer .photographer-price {
   grid-column-end: 3;
 }
 
-.thumb-section .thumb-img :nth-child(4) {
-  padding-left: 10px;
+.thumb-section .thumb-img .like_counter {
   margin-top: 10px;
   color: #D3573C;
+  -ms-grid-row: 2;
+  grid-row: 2;
   -ms-grid-column: 3;
       grid-column-start: 3;
   grid-column-end: 3;
 }
 
-.thumb-section .thumb-img :nth-child(5) {
+.thumb-section .thumb-img .heart-icon {
   height: 18.350000381469727px;
   width: 17.5px;
   left: 1.75px;
@@ -634,6 +657,7 @@ main .thumb-photographer .photographer-price {
   -ms-grid-column: 4;
       grid-column-start: 4;
   grid-column-end: 5;
+  cursor: pointer;
 }
 
 .thumb-section .thumb-img img {
@@ -644,6 +668,37 @@ main .thumb-photographer .photographer-price {
      object-fit: cover;
   height: 300px;
   width: 100%;
+}
+
+.resume_like_price {
+  width: 350px;
+  height: 89px;
+  position: fixed;
+  background-color: #DB8876;
+  font-size: 24px;
+  right: 36px;
+  bottom: 0;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 0 34px;
+}
+
+.resume_like_price .heart-icon-resume {
+  width: 22px;
+  height: 20px;
+  margin-right: 90px;
+  color: black;
+}
+
+.resume_like_price .total_counter_resume {
+  margin-right: 10px;
 }
 
 .component-header {

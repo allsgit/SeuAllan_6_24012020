@@ -4,6 +4,10 @@
 a {
   text-decoration: none;
 }
+.test{
+  position: fixed;
+  
+}
 button {
   cursor: pointer;
   border: none;
@@ -15,6 +19,7 @@ body {
   margin: 0;
   font-family: 'DM sans';
   position: relative;
+  overflow-x: hidden;
   button {
     &:hover {
       color: white;
@@ -60,6 +65,17 @@ nav {
   position: relative;
   background-color: white;
   color: $primaryBackgroundColor;
+  outline: none;
+  border: 0.5px solid #c4c4c4;
+  border-radius: 11px;
+  height: 22px;
+  transition: 0.2s;
+}
+
+.searchButton -active {
+  position: relative;
+  background-color: $primaryLinkColor;
+  color: white;
   outline: none;
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
@@ -397,6 +413,7 @@ main {
   width: 100%;
   margin: 58px 100px 0;
 
+
   .thumb-img {
     height: 351px;
     width: 350px;
@@ -408,35 +425,39 @@ main {
     font-weight: 500;
     font-size: 24px;
     // picture name
-    :nth-child(2) {
+    .picture_name {
+      align-items: center;
+      font-size: 18px;
       color: $primaryFontColor;
-      margin-top: 10px;
+      margin-top: 12px;
       grid-column-start: 1;
       grid-column-end: 2;
     }
     // price
-    :nth-child(3) {
+    .picture_price {
       margin-top: 10px;
       color: $primaryFontColor;
       grid-column-start: 2;
       grid-column-end: 3;
     }
     // number of like
-    :nth-child(4) {
-      padding-left: 10px;
+    .like_counter {
+  
       margin-top: 10px;
       color: $primaryFontColor;
+      grid-row: 2;
       grid-column-start: 3;
       grid-column-end: 3;
     }
     // heart icon
-    :nth-child(5) {
+    .heart-icon {
       height: 18.350000381469727px;
       width: 17.5px;
       left: 1.75px;
       margin-top: 16px;
       grid-column-start: 4;
       grid-column-end: 5;
+      cursor: pointer;
     }
 
     img {
@@ -449,6 +470,33 @@ main {
   }
 }
 
+.resume_like_price{
+  width: 350px;
+  height: 89px;
+  position: fixed;
+  background-color: #DB8876;
+  font-size: 24px;
+  right: 36px;
+  bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 34px;
+
+
+.heart-icon-resume{
+width: 22px;
+height: 20px;
+margin-right: 90px;
+color: black;
+}
+.price_resume{
+
+}
+.total_counter_resume{
+margin-right: 10px
+}
+}
 // component //
 
 .component-header {
