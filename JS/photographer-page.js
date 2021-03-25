@@ -1,9 +1,12 @@
 const Data = fetch ('http://127.0.0.1:5501/JS/photograph-list.json')
   .then (response => response.json ())
   .then (data => {
-    testoncela (data.media, data.photographers);
+    createHeader (data.photographers);
+    createGallery (data.media);
+    LikeCounterDiv (data.media);
   });
-function testoncela (media, photographers) {
+
+function createHeader (photographers) {
   photographers.map (element => {
     if (element.id === 243) {
       const headerProfil = document.querySelector ('.photographer-header');
@@ -16,8 +19,6 @@ function testoncela (media, photographers) {
 
       const IdPhotoImg = document.createElement ('img');
       IdPhotoImg.src = `/image/Photographers ID Photos/${element.portrait}`;
-
-      console.log (photographers.portrait);
 
       IdPhoto.classList = 'id-picture';
       photographerName.classList = 'photographer-name';
@@ -38,32 +39,11 @@ function testoncela (media, photographers) {
       photographerPrice.innerText = `${element.price} €/ jours`;
     }
   });
-
-  let likeArray = [];
-  const likeResume = document.querySelector ('.resume_like_price');
-  const LikeCounterFull = document.createElement ('p');
-  LikeCounterFull.classList = 'total_counter_resume';
-  likeResume.appendChild (LikeCounterFull);
-  LikeCounterFull.innerText = likeArray;
-
-  const heartBlack = document.createElement ('img');
-  heartBlack.classList = 'heart-icon-resume';
-  likeResume.appendChild (heartBlack);
-  heartBlack.src = '/image/heart-black.png';
-
-  const PricePerDay = document.createElement ('p');
-  PricePerDay.classList = 'price_resume';
-  likeResume.appendChild (PricePerDay);
-  PricePerDay.innerText = '300€ /jours';
-
-  const sorted = media.sort ((a, b) => b.likes - a.likes).map (element => {
- 
+}
+function createGallery (media) {
+  let sorted = media.sort ((a, b) => a.likes - b.likes).map (element => {
+    // creation gallery
     if (element.photographerId === 243) {
-      const sortIcon = document.querySelector ('.up_arrow_icon')
-      sortIcon.addEventListener('click',() => {
-      
-      })
-      console.log(element.likes);
       const photographerPic = document.createElement ('img');
       const thumbSection = document.querySelector ('.thumb-section');
       const galleryPic = document.createElement ('div');
@@ -91,43 +71,41 @@ function testoncela (media, photographers) {
       likeCounter.classList = 'like_counter';
       galleryPic.appendChild (likeCounter);
       let test = (likeCounter.innerText = element.likes);
+    }
+  });
+}
+function LikeCounterDiv (media) {
+  media.map (element => {
+    if (element.photographerId === 243) {
+      const likeResume = document.querySelector ('.resume_like_price');
+      const LikeCounterFull = document.createElement ('p');
+      LikeCounterFull.classList = 'total_counter_resume';
+      likeResume.appendChild (LikeCounterFull);
 
-      //
-      // INCREMENT EACH LIKE + TOTAL LIKE
+      const heartBlack = document.createElement ('img');
+      heartBlack.classList = 'heart-icon-resume';
+      likeResume.appendChild (heartBlack);
+      heartBlack.src = '/image/heart-black.png';
 
-      const inputValue = element.likes;
-      likeArray.push (inputValue); // likeArray est un tableau vide
+      const PricePerDay = document.createElement ('p');
+      PricePerDay.classList = 'price_resume';
+      likeResume.appendChild (PricePerDay);
+      
+      const likeArray = [];
+      likeArray.push (element.likes);
       const reducer = (acc, curr) => acc + curr;
       let sumLike = likeArray.reduce (reducer);
-      tatatat = LikeCounterFull.innerText = sumLike;
-      console.log (sumLike);
+      let totalLike = LikeCounterFull.innerText = sumLike;
 
+      let heartIcon = document.querySelector('.heart-icon');
+ 
       heartIcon.addEventListener ('click', $event => {
         $event.stopImmediatePropagation ();
-        console.log ($event);
-        LikeCounterFull.innerText = tatatat++;
-        console.log (element.likes);
         element.likes++;
-        const like = element.likes;
-
-        likeCounter.innerText = like; //element.likes++;
-        console.log (element.likes);
+        LikeCounterFull.innerText = totalLike++;
+        let like = element.likes;
+        likeCounter2.innerText = like;
       });
     }
   });
-
 }
-
-
-
-// afficher les tags sur page perso photographe //
-const showOwnTags = function (TagElement) {
-  const tagButton = document.createElement ('button');
-  tagButton.classList = 'searchButton';
-  tagButton.innerText = TagElement;
-  profile.appendChild (tagButton);
-};
-/*
-const mimiKeelTag = photographers[0].tags.map((element) => {
-  showOwnTags(element);
-})*/
