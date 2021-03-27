@@ -75,37 +75,40 @@ function createGallery (media) {
   });
 }
 function LikeCounterDiv (media) {
+  let totalLike = 0;
   media.map (element => {
-    if (element.photographerId === 243) {
-      const likeResume = document.querySelector ('.resume_like_price');
-      const LikeCounterFull = document.createElement ('p');
-      LikeCounterFull.classList = 'total_counter_resume';
-      likeResume.appendChild (LikeCounterFull);
-
-      const heartBlack = document.createElement ('img');
-      heartBlack.classList = 'heart-icon-resume';
-      likeResume.appendChild (heartBlack);
-      heartBlack.src = '/image/heart-black.png';
-
-      const PricePerDay = document.createElement ('p');
-      PricePerDay.classList = 'price_resume';
-      likeResume.appendChild (PricePerDay);
-      
+    if (element.photographerId === 243) { 
       const likeArray = [];
-      likeArray.push (element.likes);
-      const reducer = (acc, curr) => acc + curr;
-      let sumLike = likeArray.reduce (reducer);
-      let totalLike = LikeCounterFull.innerText = sumLike;
-
-      let heartIcon = document.querySelector('.heart-icon');
+      likeArray.push (element.likes); 
+      const sumLike = element.likes;
+      totalLike += element.likes;
+      const heartIcon = document.querySelector('.heart-icon');
  
       heartIcon.addEventListener ('click', $event => {
         $event.stopImmediatePropagation ();
         element.likes++;
-        LikeCounterFull.innerText = totalLike++;
-        let like = element.likes;
+        const LikeCounterFull = document.createElement ('p');
+        LikeCounterFull.innerText = sumLike++;
+        const like = element.likes;
         likeCounter2.innerText = like;
       });
     }
   });
+  TotalLike(totalLike);
+}
+function TotalLike(totalLike) {
+  const likeResume = document.querySelector ('.resume_like_price');
+  const LikeCounterFull = document.createElement ('p');
+  const heartBlack = document.createElement ('img');
+  const PricePerDay = document.createElement ('p');
+
+  LikeCounterFull.classList = 'total_counter_resume';
+  heartBlack.classList = 'heart-icon-resume';
+  heartBlack.src = '/image/heart-black.png';
+  PricePerDay.classList = 'price_resume';
+  LikeCounterFull.innerText = totalLike;
+
+  likeResume.appendChild (PricePerDay);
+  likeResume.appendChild (LikeCounterFull);
+  likeResume.appendChild (heartBlack);
 }
