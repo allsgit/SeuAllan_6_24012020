@@ -1,14 +1,22 @@
+//Retrieve URL parameter
+const queryString = window.location.search;
+const photographerUrl = new URLSearchParams (queryString);
+const idPhotographer = photographerUrl.get ('photographerid');
+const namePhotographer = photographerUrl.get ('photographername');
+
 const Data = fetch ('http://127.0.0.1:5501/JS/photograph-list.json')
   .then (response => response.json ())
   .then (data => {
     createHeader (data.photographers);
     createGallery (data.media);
-    LikeCounterDiv (data.media);
+    totalLike (data.media, data.photographers);
+    //LikeCounterDiv(data.media);
   });
 
 function createHeader (photographers) {
-  photographers.map (element => {
-    if (element.id === 243) {
+  photographers
+    .filter (photographer => photographer.id == idPhotographer)
+    .map (element => {
       const headerProfil = document.querySelector ('.photographer-header');
       const profile = document.querySelector ('.photographer-profile');
       const photographerName = document.createElement ('h1');
@@ -37,20 +45,22 @@ function createHeader (photographers) {
       photographerTagLine.innerText = element.tagline;
       photographerLocation.innerText = `${element.city} , ${element.country}`;
       photographerPrice.innerText = `${element.price} €/ jours`;
-    }
-  });
+    });
 }
 function createGallery (media) {
-  let sorted = media.sort ((a, b) => a.likes - b.likes).map (element => {
-    // creation gallery
-    if (element.photographerId === 243) {
+  let sorted = media
+    .filter (photo => photo.photographerId == idPhotographer)
+    .sort ((a, b) => a.likes - b.likes)
+    .map (element => {
+      // creation gallery
       const photographerPic = document.createElement ('img');
       const thumbSection = document.querySelector ('.thumb-section');
       const galleryPic = document.createElement ('div');
       galleryPic.classList = 'thumb-img';
       thumbSection.appendChild (galleryPic);
       galleryPic.appendChild (photographerPic);
-      photographerPic.src = `/image/Mimi/${element.image} `;
+      photographerPic.classList = "pictures"
+      photographerPic.src = `/image/${namePhotographer}/${element.image} `;
 
       const picName = document.createElement ('p');
       picName.classList = 'picture_name';
@@ -67,48 +77,52 @@ function createGallery (media) {
       galleryPic.appendChild (heartIcon);
       heartIcon.src = '/image/heart.png';
 
+      var likes = element.likes;
       const likeCounter = document.createElement ('p');
       likeCounter.classList = 'like_counter';
+      likeCounter.innerText = likes;
       galleryPic.appendChild (likeCounter);
-      let test = (likeCounter.innerText = element.likes);
-    }
-  });
-}
-function LikeCounterDiv (media) {
-  let totalLike = 0;
-  media.map (element => {
-    if (element.photographerId === 243) { 
-      const likeArray = [];
-      likeArray.push (element.likes); 
-      const sumLike = element.likes;
-      totalLike += element.likes;
-      const heartIcon = document.querySelector('.heart-icon');
- 
+
       heartIcon.addEventListener ('click', $event => {
-        $event.stopImmediatePropagation ();
-        element.likes++;
-        const LikeCounterFull = document.createElement ('p');
-        LikeCounterFull.innerText = sumLike++;
-        const like = element.likes;
-        likeCounter2.innerText = like;
+        likes++;
+        likeCounter.innerText = likes;
       });
-    }
-  });
-  TotalLike(totalLike);
+    });
 }
-function TotalLike(totalLike) {
+const likeArray = [];
+function totalLike (media, photographers) {
+  // CREATE BOTTOM COUNTER //
   const likeResume = document.querySelector ('.resume_like_price');
   const LikeCounterFull = document.createElement ('p');
   const heartBlack = document.createElement ('img');
-  const PricePerDay = document.createElement ('p');
+  const pricePerDay = document.createElement ('p');
 
   LikeCounterFull.classList = 'total_counter_resume';
   heartBlack.classList = 'heart-icon-resume';
   heartBlack.src = '/image/heart-black.png';
-  PricePerDay.classList = 'price_resume';
-  LikeCounterFull.innerText = totalLike;
-
-  likeResume.appendChild (PricePerDay);
+  pricePerDay.classList = 'price_resume';
   likeResume.appendChild (LikeCounterFull);
   likeResume.appendChild (heartBlack);
+  likeResume.appendChild (pricePerDay);
+
+
+photographers
+.filter (photo =>photo.id.toString() === idPhotographer)
+.map (element => {
+  pricePerDay.innerText = `${element.price} €`;
+});
+
+  // SUM OF THE LIKE //
+media
+    .filter (photo => photo.photographerId == idPhotographer)
+    .map (element => {
+      likeArray.push (element.likes);
+      const reducer = (accumulator, currentValue) => accumulator + currentValue;
+      totalLikeBottom = likeArray.reduce (reducer);
+      LikeCounterFull.innerText = totalLikeBottom;
+    });
+
 }
+
+
+

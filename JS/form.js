@@ -17,7 +17,7 @@ const lastName = document.getElementById ('nom');
 const email = document.getElementById ('email');
 const sendButton = document.querySelector ('.send');
 const inputField = document.querySelectorAll ('input');
-console.log (inputField);
+
 
 //
 // MODAL INPUT FUNCTION *** SHOW INPUT IN CONSOLE ON VALIDATION
