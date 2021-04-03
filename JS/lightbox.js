@@ -20,15 +20,7 @@ lightBox.innerHTML = `      <button class="navigation-back"></button>
 
 
 
-const pictures = document.getElementsByClassName ('pictures')
-let toto = [...pictures];
-console.log(pictures);
-console.log(toto);
-Array.from(document.getElementsByClassName("pictures")).forEach(
-  function() {
-      console.log("test 1111");
-  }
-);
+
 
 
 /* pictures.forEach(image => {

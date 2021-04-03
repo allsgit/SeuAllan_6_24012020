@@ -43,6 +43,7 @@ header, main .main-section {
 }
 
 .lightBox-container {
+  -webkit-tap-highlight-color: none;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,6 +58,8 @@ header, main .main-section {
   height: 100%;
   z-index: 10000;
   display: none;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
 .lightBox-container .navigation-next,
@@ -86,12 +89,14 @@ header, main .main-section {
 .lightBox-modal {
   width: 50%;
   height: 80%;
-  margin: auto auto;
+  margin: 100px auto;
 }
 
 .lightBox-modal img {
   -o-object-fit: cover;
      object-fit: cover;
+  -o-object-position: top;
+     object-position: top;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -677,7 +682,7 @@ main .thumb-photographer .photographer-price {
   background-color: #DB8876;
   font-size: 24px;
   right: 36px;
-  bottom: 10px;
+  bottom: 0px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

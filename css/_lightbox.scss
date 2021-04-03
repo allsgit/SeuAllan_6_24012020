@@ -1,4 +1,7 @@
 // lightbox //
+body{
+
+}
 #close-lightbox {
   position: fixed;
   margin: 0;
@@ -20,6 +23,7 @@
 }
 
 .lightBox-container {
+    -webkit-tap-highlight-color: none;
   display: flex;
   justify-content: space-between;
   background-color: white;
@@ -30,6 +34,8 @@
   height: 100%;
   z-index: 10000;
   display: none;
+  transition: 1s;
+  
   
 
   .navigation-next,
@@ -54,10 +60,11 @@
 .lightBox-modal {
   width: 50%;
   height: 80%;
-  margin: auto auto;
+  margin: 100px auto;
 
   img {
     object-fit: cover;
+    object-position: top;
     height: 100%;
     width: 100%;
     margin: 0;

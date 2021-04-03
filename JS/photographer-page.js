@@ -10,7 +10,7 @@ const Data = fetch ('http://127.0.0.1:5501/JS/photograph-list.json')
     createHeader (data.photographers);
     createGallery (data.media);
     totalLike (data.media, data.photographers);
-    //LikeCounterDiv(data.media);
+    lightBoxShow ();
   });
 
 function createHeader (photographers) {
@@ -59,7 +59,7 @@ function createGallery (media) {
       galleryPic.classList = 'thumb-img';
       thumbSection.appendChild (galleryPic);
       galleryPic.appendChild (photographerPic);
-      photographerPic.classList = "pictures"
+      photographerPic.classList = 'pictures';
       photographerPic.src = `/image/${namePhotographer}/${element.image} `;
 
       const picName = document.createElement ('p');
@@ -105,15 +105,14 @@ function totalLike (media, photographers) {
   likeResume.appendChild (heartBlack);
   likeResume.appendChild (pricePerDay);
 
-
-photographers
-.filter (photo =>photo.id.toString() === idPhotographer)
-.map (element => {
-  pricePerDay.innerText = `${element.price} €`;
-});
+  photographers
+    .filter (photo => photo.id.toString () === idPhotographer)
+    .map (element => {
+      pricePerDay.innerText = `${element.price} €`;
+    });
 
   // SUM OF THE LIKE //
-media
+  media
     .filter (photo => photo.photographerId == idPhotographer)
     .map (element => {
       likeArray.push (element.likes);
@@ -121,8 +120,45 @@ media
       totalLikeBottom = likeArray.reduce (reducer);
       LikeCounterFull.innerText = totalLikeBottom;
     });
-
 }
 
+function lightBoxShow () {
+  //
+  //**OPEN LIGHTBOX ON CLICK */
+  const pictures = document.getElementsByClassName ('pictures');
+  const lightbox = document.querySelector ('.lightBox-container');
+  let arrayPictures = [...pictures];
+  arrayPictures.forEach (image => {
+    image.addEventListener ('click', e => {
+      let img = document.createElement ('img');
+      img.src = e.target.src;
+      let i = arrayPictures.indexOf (e.currentTarget);
+      let lightBoxBox = document.querySelector ('.lightBox-modal');
+      while (lightBoxBox.firstChild) {
+        lightBoxBox.removeChild (lightBoxBox.firstChild);
+      }
+      lightBoxBox.appendChild (img);
+      lightbox.style.display = 'block';
 
-
+      //
+      //*****LIGHTBOX NAVIGATION**** */
+      const next = document.querySelector ('.navigation-next');
+      const previous = document.querySelector ('.navigation-back');
+      next.addEventListener ('click', () => {
+        if (i >= arrayPictures.length - 1) i = -1;
+        i++;
+        img.src = pictures[i].src;
+      });
+      previous.addEventListener ('click', () => {
+        if (i <= 0) i = arrayPictures.length;
+        i--;
+        img.src = pictures[i].src;
+      });
+    });
+  });
+  //
+  //**CLOSE LIGHTBOX ON CLICK */
+  document.getElementById ('close-lightbox').addEventListener ('click', () => {
+    lightbox.style.display = 'none';
+  });
+}
