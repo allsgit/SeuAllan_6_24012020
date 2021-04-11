@@ -312,11 +312,10 @@ main {
   }
 
   .contact-me {
-    position: absolute;
-    top: 63px;
-    left: 450px;
+
     width: 170px;
     height: 69px;
+    margin: 0 100px 120px 1px;
     background-color: $primaryLinkColor;
     outline: none;
     color: #ffffff;
@@ -424,6 +423,7 @@ main {
     grid-template-rows: 300px 51px;
     font-weight: 500;
     font-size: 24px;
+    cursor: pointer;
     // picture name
     .picture_name {
       align-items: center;
@@ -469,6 +469,62 @@ main {
     }
   }
 }
+.thumb-video{
+  height: 351px;
+  width: 350px;
+  margin-right: 95px;
+  margin-bottom: 71px;
+  display: grid;
+  grid-template-columns: 232px 60px 40px 18px;
+  grid-template-rows: 300px 51px;
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
+  // picture name
+  .picture_name {
+    align-items: center;
+    font-size: 18px;
+    color: $primaryFontColor;
+    margin-top: 12px;
+    grid-column-start: 1;
+    grid-column-end: 2;
+  }
+  // price
+  .picture_price {
+    margin-top: 10px;
+    color: $primaryFontColor;
+    grid-column-start: 2;
+    grid-column-end: 3;
+  }
+  // number of like
+  .like_counter {
+
+    margin-top: 10px;
+    color: $primaryFontColor;
+    grid-row: 2;
+    grid-column-start: 3;
+    grid-column-end: 3;
+  }
+  // heart icon
+  .heart-icon {
+    height: 18.350000381469727px;
+    width: 17.5px;
+    left: 1.75px;
+    margin-top: 16px;
+    grid-column-start: 4;
+    grid-column-end: 5;
+    cursor: pointer;
+  }
+
+  img {
+    grid-column-start: 1;
+    grid-column-end: 5;
+    object-fit: cover;
+    height: 300px;
+    width: 100%;
+  }
+}
+
 
 .resume_like_price{
   width: 350px;

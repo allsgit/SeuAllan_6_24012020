@@ -35,6 +35,15 @@ body{
   z-index: 10000;
   display: none;
   transition: 1s;
+
+  p{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    margin-bottom: -200px;
+
+    color: red;
+  }
   
   
 
@@ -60,11 +69,13 @@ body{
 .lightBox-modal {
   width: 50%;
   height: 80%;
-  margin: 100px auto;
+  margin: 60px auto;
+
+
 
   img {
-    object-fit: cover;
-    object-position: top;
+    object-fit:cover;
+    object-position: center;
     height: 100%;
     width: 100%;
     margin: 0;

@@ -62,6 +62,20 @@ header, main .main-section {
   transition: 1s;
 }
 
+.lightBox-container p {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: -200px;
+  color: red;
+}
+
 .lightBox-container .navigation-next,
 .lightBox-container .navigation-back {
   position: fixed;
@@ -89,14 +103,14 @@ header, main .main-section {
 .lightBox-modal {
   width: 50%;
   height: 80%;
-  margin: 100px auto;
+  margin: 60px auto;
 }
 
 .lightBox-modal img {
   -o-object-fit: cover;
      object-fit: cover;
-  -o-object-position: top;
-     object-position: top;
+  -o-object-position: center;
+     object-position: center;
   height: 100%;
   width: 100%;
   margin: 0;
@@ -478,11 +492,9 @@ main .thumb-photographer .photographer-price {
 }
 
 .photographer-header .contact-me {
-  position: absolute;
-  top: 63px;
-  left: 450px;
   width: 170px;
   height: 69px;
+  margin: 0 100px 120px 1px;
   background-color: #901C1C;
   outline: none;
   color: #ffffff;
@@ -622,6 +634,7 @@ main .thumb-photographer .photographer-price {
       grid-template-rows: 300px 51px;
   font-weight: 500;
   font-size: 24px;
+  cursor: pointer;
 }
 
 .thumb-section .thumb-img .picture_name {
@@ -666,6 +679,73 @@ main .thumb-photographer .photographer-price {
 }
 
 .thumb-section .thumb-img img {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 5;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.thumb-video {
+  height: 351px;
+  width: 350px;
+  margin-right: 95px;
+  margin-bottom: 71px;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: 232px 60px 40px 18px;
+      grid-template-columns: 232px 60px 40px 18px;
+  -ms-grid-rows: 300px 51px;
+      grid-template-rows: 300px 51px;
+  font-weight: 500;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.thumb-video .picture_name {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  color: #D3573C;
+  margin-top: 12px;
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 2;
+}
+
+.thumb-video .picture_price {
+  margin-top: 10px;
+  color: #D3573C;
+  -ms-grid-column: 2;
+      grid-column-start: 2;
+  grid-column-end: 3;
+}
+
+.thumb-video .like_counter {
+  margin-top: 10px;
+  color: #D3573C;
+  -ms-grid-row: 2;
+  grid-row: 2;
+  -ms-grid-column: 3;
+      grid-column-start: 3;
+  grid-column-end: 3;
+}
+
+.thumb-video .heart-icon {
+  height: 18.350000381469727px;
+  width: 17.5px;
+  left: 1.75px;
+  margin-top: 16px;
+  -ms-grid-column: 4;
+      grid-column-start: 4;
+  grid-column-end: 5;
+  cursor: pointer;
+}
+
+.thumb-video img {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 5;
