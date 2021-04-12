@@ -1,95 +1,92 @@
 <!DOCTYPE html>
 <html lang="en">
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/style.css" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap" rel="stylesheet" />
-    <title>Fish Eyes</title>
-  </head>
- 
-  <body>
-    
-    <div id="modal">
-<h1>Contactez moi</h1>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="/css/style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap" rel="stylesheet" />
+  <title>Fish Eyes</title>
+</head>
 
-      <img id="close" src="/image/cross.png" alt="" />
-      <div class="firstname">
-        <label for="prenom">Prénom</label>
-        <input type="prenom" id="prenom" name="prenom" required minlength="4" maxlength="8" size="10" />
-      </div>
-      <div class="lastname">
-        <label for="nom">Nom</label>
-        <input type="nom" id="nom" name="nom" required minlength="4" maxlength="8" size="10" />
-      </div>
-  
-      <div class="mail">
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email" required minlength="4" maxlength="8" size="10" />
-      </div>
-  
-      <div class="user-message">
-        <label for="votre-message">Votre message</label>
-        <textarea id="user_message" name="user_message" rows="10" cols="20">
+<body>
+
+  <div id="modal">
+    <h1>Contactez moi</h1>
+    <img id="close" src="/image/cross.png" alt="" />
+    <div class="firstname">
+      <label for="prenom">Prénom</label>
+      <input type="prenom" id="prenom" name="prenom" required minlength="4" maxlength="8" size="10" />
+    </div>
+    <div class="lastname">
+      <label for="nom">Nom</label>
+      <input type="nom" id="nom" name="nom" required minlength="4" maxlength="8" size="10" />
+    </div>
+
+    <div class="mail">
+      <label for="email">Email</label>
+      <input type="email" id="email" name="email" required minlength="4" maxlength="8" size="10" />
+    </div>
+
+    <div class="user-message">
+      <label for="votre-message">Votre message</label>
+      <textarea id="user_message" name="user_message" rows="10" cols="20">
             </textarea>
-  
-  
-      </div>
-  
-      <button class="send" type="submit">Envoyer</button>
-    </div>
-    <div class="lightBox-container">
-  
-      <button class="navigation-back"></button>
-      <button class="navigation-next"></button>
-      <div class="lightBox-modal">
-        <p class="picture_name"></p>
-      </div>
-      
-      <button id="close-lightbox"></button>
-    </div>
-    
-    <div class="main-container">
-      <header>
-        <div class="logo">
-          <a href="index.html">
-            <img src="/image/images/Group.png" alt="Fisheye Home page" />
-          </a>
-        </div>
-      </header>
-      <main>
-        <header class="photographer-header">
-          <div class="photographer-profile">
-          </div>
-          <button class="contact-me">Contactez-moi</button>
-        </header>
-        <div class="short-by">
-          <label for="short-by">Trier par</label>
-          <div class="dropdown-open">
-            <ul>
-              <li>Popularité <img src="/image/images/upArrow.png" class="up_arrow_icon"></li>
-    <!--           <hr class="menu-underline"></span>
-              <li>Date</li>
-              <hr class="menu-underline"></span>
-              <li>Titre</li> -->
-              <button class="btntest">FILTRE</button>
-              <button class="btntest">DATE</button>
-              <button class="btntest">NAME</button>
-            </ul>
-          </div>
-        </div>
-        <div class="thumb-section">
-          <div class="resume_like_price"></div>
-      </main>
     </div>
 
-  </body>
-  <script src="/JS/photographer-page.js"></script>
-  <script src="/JS/form.js"></script>
-  <script src="/JS/sortBy.js"></script>
-  
- <script src="/JS/lightbox.js"></script>
+    <button class="send" type="submit">Envoyer</button>
+  </div>
+  <div class="lightBox-container">
+    <button class="navigation-back"></button>
+    <button class="navigation-next"></button>
+    <div class="lightBox-modal">
+      <p class="picture_name"></p>
+    </div>
+    <button id="close-lightbox"></button>
+  </div>
+
+  <div class="main-container">
+    <header>
+      <div class="logo">
+        <a href="/index.html">
+          <img src="/image/images/Group.png" alt="Fisheye Home page" />
+        </a>
+      </div>
+    </header>
+    <main>
+      <header class="photographer-header">
+        <div class="photographer-profile">
+        </div>
+        <button class="contact-me">Contactez-moi</button>
+      </header>
+      <div class="short-by">
+        <label for="short-by">Trier par</label>
+        <div class="dropdown-open">
+          <ul>
+            <li>
+              <button class="btnfilter">Popularité</button>
+              <img src="/image/images/upArrow.png" class="up_arrow_icon">
+            </li>
+            <li>
+              <button class="btnfilter">Date</button>
+            </li>
+            <li>
+              <button class="btnfilter">Nom</button>
+            </li>
+          </ul>
+        </div>
+      </div>
+      <div class="thumb-section">
+        <div class="resume_like_price"></div>
+    </main>
+  </div>
+
+</body>
+<script src="/JS/photographer-page.js"></script>
+<script src="/JS/form.js"></script>
+<script src="/JS/sortBy.js"></script>
+<script src="/JS/lightbox.js"></script>
+
 </html>

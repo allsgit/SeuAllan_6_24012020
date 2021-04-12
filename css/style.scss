@@ -156,7 +156,7 @@ main {
     }
 
     .photographer-location {
-      margin-top: 0;
+      margin-top: 17px;
       color: $primaryFontColor;
       font-weight: 400;
     }
@@ -368,6 +368,12 @@ main {
   font-size: 14px;
   overflow: hidden;
   transition: 0.3s;
+
+  .btnfilter{
+    background-color: transparent;
+    color: white;
+    font-weight: 700;
+  }
 
   .up_arrow_icon {
     transition: 0.2s;

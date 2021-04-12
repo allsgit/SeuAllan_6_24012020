@@ -292,7 +292,7 @@ main .thumb-photographer .description {
 }
 
 main .thumb-photographer .photographer-location {
-  margin-top: 0;
+  margin-top: 17px;
   color: #D3573C;
   font-weight: 400;
 }
@@ -558,6 +558,12 @@ main .thumb-photographer .photographer-price {
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+}
+
+.dropdown-open .btnfilter {
+  background-color: transparent;
+  color: white;
+  font-weight: 700;
 }
 
 .dropdown-open .up_arrow_icon {
