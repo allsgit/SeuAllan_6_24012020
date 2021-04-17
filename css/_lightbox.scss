@@ -70,16 +70,20 @@ body{
   width: 50%;
   height: 80%;
   margin: 60px auto;
+    .pic-name-bloc {
+      z-index: 1000000;
+    }
 
 
 
-  img {
+  img, video {
     object-fit:cover;
     object-position: center;
     height: 100%;
     width: 100%;
     margin: 0;
   }
+  
   p {
     margin: 0;
   }

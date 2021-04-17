@@ -368,11 +368,17 @@ main {
   font-size: 14px;
   overflow: hidden;
   transition: 0.3s;
+  z-index: 1000;
 
   .btnfilter{
     background-color: transparent;
     color: white;
     font-weight: 700;
+    z-index: 10000;
+      &:hover {
+        color: blue;
+        background-color: grey;
+      }
   }
 
   .up_arrow_icon {
@@ -466,13 +472,21 @@ main {
       cursor: pointer;
     }
 
-    img {
+    img{
       grid-column-start: 1;
       grid-column-end: 5;
       object-fit: cover;
       height: 300px;
       width: 100%;
     }
+    video {
+      grid-column-start: 1;
+      grid-column-end: 5;
+      object-fit: cover;
+      height: 300px;
+      width: 100%;
+    }
+    
   }
 }
 .thumb-video{

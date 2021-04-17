@@ -106,7 +106,11 @@ header, main .main-section {
   margin: 60px auto;
 }
 
-.lightBox-modal img {
+.lightBox-modal .pic-name-bloc {
+  z-index: 1000000;
+}
+
+.lightBox-modal img, .lightBox-modal video {
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -558,12 +562,19 @@ main .thumb-photographer .photographer-price {
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
+  z-index: 1000;
 }
 
 .dropdown-open .btnfilter {
   background-color: transparent;
   color: white;
   font-weight: 700;
+  z-index: 10000;
+}
+
+.dropdown-open .btnfilter:hover {
+  color: blue;
+  background-color: grey;
 }
 
 .dropdown-open .up_arrow_icon {
@@ -685,6 +696,16 @@ main .thumb-photographer .photographer-price {
 }
 
 .thumb-section .thumb-img img {
+  -ms-grid-column: 1;
+      grid-column-start: 1;
+  grid-column-end: 5;
+  -o-object-fit: cover;
+     object-fit: cover;
+  height: 300px;
+  width: 100%;
+}
+
+.thumb-section .thumb-img video {
   -ms-grid-column: 1;
       grid-column-start: 1;
   grid-column-end: 5;
