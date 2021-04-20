@@ -36,13 +36,13 @@ function createHeader(photographers) {
 			photographerName.classList = 'photographer-name';
 			photographerLocation.classList = 'photographer-location-profile';
 			photographerTagLine.classList = 'photographer-tag-profile';
-			photographerPrice.classList = 'photographer-price-profile';
+			/* photographerPrice.classList = 'photographer-price-profile'; */
 
 			headerProfil.appendChild(IdPhoto);
 			IdPhoto.appendChild(IdPhotoImg);
 			profile.appendChild(photographerName);
 			profile.appendChild(photographerLocation);
-			profile.appendChild(photographerPrice);
+			/* profile.appendChild(photographerPrice); */
 			profile.appendChild(photographerTagLine);
 
 			photographerName.innerText = element.name;
@@ -55,7 +55,7 @@ function createHeader(photographers) {
 			tagSet.map((tag) => {
 				const tagButton = document.createElement('button');
 				tagButton.classList = 'searchButton';
-				tagButton.innerText = tag;
+				tagButton.innerText = `#${tag}`;
 				profile.appendChild(tagButton);
 			});
 		});
@@ -166,7 +166,7 @@ function totalLike(media, photographers) {
 	photographers
 		.filter((photo) => photo.id.toString() === idPhotographer)
 		.map((element) => {
-			pricePerDay.innerText = `${element.price} €`;
+			pricePerDay.innerText = `${element.price} €/jour`;
 		});
 
 	// NOTE //* SUM OF LIKES ON THE BOTTOM **** //
@@ -212,7 +212,7 @@ function filterBy(media, photographers) {
 				);
 			}
 			createGallery(mediaSorted);
-			lightBoxShow();
+			lightBoxShow(media);
 			totalLike(mediaSorted, photographers);
 		});
 	});
@@ -223,19 +223,18 @@ function lightBoxShow(media) {
 	const lightbox = document.querySelector('.lightBox-container');
 	const pictures = document.getElementsByClassName('pictures');
 	const lightBoxBox = document.querySelector('.lightBox-modal');
+
 	let namelight = media.filter((photo) => photo.photographerId == idPhotographer).map(element => {
 		if (element.image) {
 			return element.image
 		} else {
 			return element.video
-		}
-		
+		}		
 	})
-	
-	console.log(namelight);
 
 	let arrayPictures = [...pictures];
 	const lightboxregex = /(_)|(.jpg)/g;
+	const lightboxregexVideo = /(_)|(.mp4)/g;
 
 	arrayPictures.forEach((image) => {
 		image.addEventListener('click', (e) => {
@@ -252,11 +251,14 @@ function lightBoxShow(media) {
 			if (e.target === document.querySelector('video')) {
 				img = document.createElement('video');
 				img.setAttribute('controls', '');
+				lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, " ");
 			} else {
 				img = document.createElement('img');
+				lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
 			}
+	
 			img.src = e.target.src;
-			lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
+			
 
 
 
@@ -281,21 +283,24 @@ function lightBoxShow(media) {
 					img = document.createElement('video');
 					img.setAttribute('controls', '');
 					lightBoxBox.appendChild(img);
+					lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, " ");
+
 				} else {
 					lightBoxBox.innerHTML = ' ';
 					img = document.createElement('img');
 					lightBoxBox.appendChild(img);
+					lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
+
 				}
 				img.src = pictures[i].src;
 				
 
-				lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
+				
 			
 				
 			}
 			next.addEventListener('click', navNext, false);
 			window.addEventListener('keydown', (event) => {
-				console.log(event.key);
 				if (event.key === 'ArrowRight') {
 					navNext();
 				}
@@ -309,13 +314,18 @@ function lightBoxShow(media) {
 					img = document.createElement('video');
 					img.setAttribute('controls', '');
 					lightBoxBox.appendChild(img);
+					lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, " ");
+
+					
 				} else {
 					lightBoxBox.innerHTML = ' ';
 					img = document.createElement('img');
 					lightBoxBox.appendChild(img);
+					lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
+
 				}
 				img.src = pictures[i].src;
-				lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
+				
 
 			}
 			previous.addEventListener('click', navPrevious, false);
@@ -330,12 +340,12 @@ function lightBoxShow(media) {
 	//
 	//**CLOSE LIGHTBOX ON CLICK  */
 	document.getElementById('close-lightbox').addEventListener('click', () => {
-		lightBoxBox.innerHTML = ' ';
-		lightbox.style.display = 'none';
-		lightbox.removeChild(document.querySelector(".pic-name-bloc"))
+		if((document.querySelector(".pic-name-bloc"))) {
+			lightbox.removeChild(document.querySelector(".pic-name-bloc"));
+		}
 		
-
-
+		lightbox.style.display = 'none';
+	
 		
 	});
 }

@@ -72,7 +72,6 @@ header, main .main-section {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-bottom: -200px;
   color: red;
 }
 
@@ -100,17 +99,25 @@ header, main .main-section {
           transform: rotate(180deg);
 }
 
-.lightBox-modal {
-  width: 50%;
-  height: 80%;
-  margin: 60px auto;
-}
-
-.lightBox-modal .pic-name-bloc {
+.lightBox-container .pic-name-bloc {
+  text-align: left;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-left: 25%;
+  margin-top: -4%;
   z-index: 1000000;
 }
 
+.lightBox-modal {
+  width: 850px;
+  height: 600px;
+  margin: 0 auto;
+}
+
 .lightBox-modal img, .lightBox-modal video {
+  position: relative;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -118,6 +125,7 @@ header, main .main-section {
   height: 100%;
   width: 100%;
   margin: 0;
+  border-radius: 5px;
 }
 
 .lightBox-modal p {
@@ -190,6 +198,7 @@ nav {
   background-color: white;
   color: #901C1C;
   outline: none;
+  font-weight: 500;
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
   height: 22px;
@@ -297,7 +306,7 @@ main .thumb-photographer .description {
 
 main .thumb-photographer .photographer-location {
   margin-top: 17px;
-  color: #D3573C;
+  color: #901C1C;
   font-weight: 400;
 }
 
@@ -485,8 +494,12 @@ main .thumb-photographer .photographer-price {
 
 .photographer-header .photographer-profile p:nth-child(2) {
   font-size: 24px;
-  color: #D3573C;
+  color: #901C1C;
   margin: 0;
+}
+
+.photographer-header .photographer-profile .photographer-tag-profile {
+  color: #525252;
 }
 
 .photographer-header .photographer-profile p:nth-child(3) {
@@ -536,6 +549,7 @@ main .thumb-photographer .photographer-price {
 
 .short-by {
   position: relative;
+  font-weight: 700;
   margin-left: 100px;
   margin-top: 20px;
   display: -webkit-box;
@@ -553,12 +567,13 @@ main .thumb-photographer .photographer-price {
           justify-content: center;
   left: 60px;
   height: 62px;
-  width: 170px;
+  width: 160px;
   margin-left: 20px;
   border-radius: 5px;
   background-color: #901C1C;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 700;
   overflow: hidden;
   -webkit-transition: 0.3s;
   transition: 0.3s;
@@ -570,11 +585,6 @@ main .thumb-photographer .photographer-price {
   color: white;
   font-weight: 700;
   z-index: 10000;
-}
-
-.dropdown-open .btnfilter:hover {
-  color: blue;
-  background-color: grey;
 }
 
 .dropdown-open .up_arrow_icon {
@@ -617,11 +627,12 @@ main .thumb-photographer .photographer-price {
   padding-left: 20px;
 }
 
-.dropdown-open .menu-underline {
+.menu-underline {
   height: 1px;
-  width: 150px;
+  width: 130px;
   border: none;
   background-color: #ffffff;
+  z-index: 100000;
 }
 
 .thumb-section {
@@ -783,7 +794,7 @@ main .thumb-photographer .photographer-price {
 }
 
 .resume_like_price {
-  width: 350px;
+  width: 376px;
   height: 89px;
   position: fixed;
   background-color: #DB8876;
@@ -1056,6 +1067,189 @@ main .thumb-photographer .photographer-price {
   }
   header nav :nth-child(6) {
     margin-right: 4px;
+  }
+}
+
+@media (max-width: 375px) {
+  * {
+    margin: none;
+    padding: 0;
+  }
+  #modal {
+    width: 101%;
+    height: 101%;
+    margin-top: -17px;
+  }
+  #modal label {
+    font-size: 24px;
+    margin: 14 0 6px 0;
+  }
+  #modal input, #modal textarea {
+    width: 338px;
+    border-radius: 5px;
+    border: none;
+    margin: 0;
+  }
+  #modal .firstname,
+  #modal .lastname,
+  #modal .mail {
+    height: 76px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 14px 20px 0;
+  }
+  #modal .user-message {
+    margin: 14px 20px 0;
+    height: 225px;
+  }
+  #modal h1, #modal h2 {
+    font-size: 36px;
+    margin: 0;
+    margin: 0 14px;
+  }
+  #modal h1 {
+    padding: 0;
+  }
+  #modal h2 {
+    margin-bottom: 26px;
+  }
+  #modal #close {
+    width: 18.67px;
+    height: 18.67px;
+  }
+  #modal .send {
+    width: 170px;
+    height: 35px;
+    margin: 26px 95px 0;
+  }
+  .main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .logo {
+    margin: 48px 0 0 15px;
+    width: 150px;
+  }
+  header {
+    margin-bottom: 20px;
+  }
+  .photographer-header {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+  }
+  .photographer-header .contact-me {
+    position: fixed;
+    margin: auto;
+    padding: 0;
+    top: 745px;
+    width: 170px;
+    height: 35px;
+  }
+  .photographer-header .id-picture {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: -72px;
+  }
+  .photographer-header .photographer-profile {
+    width: 69%;
+    margin: 0 200px 0 0;
+    padding: 0 0 0 14px;
+  }
+  .photographer-header .photographer-profile .photographer-name {
+    font-size: 36px;
+  }
+  .photographer-header .photographer-profile p {
+    margin: 10px;
+  }
+  .photographer-header .photographer-profile p:nth-child(3) {
+    font-size: 13px;
+    color: #525252;
+    font-weight: 400;
+    margin: 4px 0;
+  }
+  .photographer-header .photographer-profile p:nth-child(2) {
+    font-size: 13px;
+    color: #901C1C;
+    margin: 0;
+  }
+  .searchButton {
+    margin-top: 3px;
+    margin-right: 5px;
+    padding: 0 8px;
+    margin-bottom: 52px;
+  }
+  .short-by {
+    display: none;
+  }
+  .resume_like_price {
+    display: none;
+  }
+  main h1 {
+    width: 100%;
+    left: 234px;
+    top: 53px;
+    font-size: 14px;
+    margin: 0;
+  }
+  main .thumb-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+  }
+  main .thumb-section .thumb-img {
+    margin: 0 auto;
+    border-radius: 5px;
+    -ms-grid-columns: 230px 45px 42px 18px;
+        grid-template-columns: 230px 45px 42px 18px;
+    -ms-grid-rows: 190px 34px;
+        grid-template-rows: 190px 34px;
+    color: #901C1C;
+    margin-bottom: 5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+  }
+  main .thumb-section .thumb-img .pictures {
+    border-radius: 5px;
+    width: 335px;
+    height: 190px;
+  }
+  main .thumb-section .thumb-img .picture_name {
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .picture_price {
+    font-size: 14px;
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .like_counter {
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .heart-icon {
+    width: 11px;
+    height: 11px;
+    padding-bottom: 21px;
   }
 }
 /*# sourceMappingURL=style.css.map */

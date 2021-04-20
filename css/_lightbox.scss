@@ -40,7 +40,6 @@ body{
     align-items: center;
     display: flex;
     justify-content: center;
-    margin-bottom: -200px;
 
     color: red;
   }
@@ -65,26 +64,37 @@ body{
     right: 0;
     transform: rotate(180deg);
   }
+  .pic-name-bloc {
+    text-align: left;
+    position: absolute;
+    display: flex;
+    margin-left: 25%;
+    margin-top: -4%;
+    z-index: 1000000;
+  }
 }
 .lightBox-modal {
-  width: 50%;
-  height: 80%;
-  margin: 60px auto;
-    .pic-name-bloc {
-      z-index: 1000000;
-    }
+  width: 850px;
+  height: 600px;
+  margin: 0 auto;
+
+
 
 
 
   img, video {
+    position: relative;
     object-fit:cover;
     object-position: center;
     height: 100%;
     width: 100%;
     margin: 0;
+    border-radius: 5px;
   }
   
   p {
     margin: 0;
   }
 }
+
+

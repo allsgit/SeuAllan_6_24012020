@@ -66,6 +66,7 @@ nav {
   background-color: white;
   color: $primaryBackgroundColor;
   outline: none;
+  font-weight: 500;
   border: 0.5px solid #c4c4c4;
   border-radius: 11px;
   height: 22px;
@@ -157,7 +158,7 @@ main {
 
     .photographer-location {
       margin-top: 17px;
-      color: $primaryFontColor;
+      color: $primaryBackgroundColor;
       font-weight: 400;
     }
     .photographer-tag {
@@ -301,8 +302,12 @@ main {
     }
     p:nth-child(2) {
       font-size: 24px;
-      color: $primaryFontColor;
+      color: $primaryBackgroundColor;
       margin: 0;
+    }
+    .photographer-tag-profile {
+      color: #525252;
+      ;
     }
     p:nth-child(3) {
       font-size: 18px;
@@ -348,6 +353,7 @@ main {
 }
 .short-by {
   position: relative;
+  font-weight: 700;
   margin-left: 100px;
   margin-top: 20px;
   display: flex;
@@ -360,12 +366,13 @@ main {
   left: 60px;
   height: 62px;
   //height: 170px;
-  width: 170px;
+  width: 160px;
   margin-left: 20px;
   border-radius: 5px;
-  background-color: $primaryLinkColor;
+  background-color: $primaryBackgroundColor;
   color: #ffffff;
-  font-size: 14px;
+  font-size: 18px;
+  font-weight: 700;
   overflow: hidden;
   transition: 0.3s;
   z-index: 1000;
@@ -375,10 +382,7 @@ main {
     color: white;
     font-weight: 700;
     z-index: 10000;
-      &:hover {
-        color: blue;
-        background-color: grey;
-      }
+
   }
 
   .up_arrow_icon {
@@ -403,6 +407,7 @@ main {
         height: 9.88px;
         margin-right: 18px;
       }
+
     }
     li:not(.trait) {
       line-height: 23, 44px;
@@ -410,12 +415,14 @@ main {
       padding-left: 20px;
     }
   }
-  .menu-underline {
-    height: 1px;
-    width: 150px;
-    border: none;
-    background-color: #ffffff;
-  }
+
+}
+.menu-underline {
+  height: 1px;
+  width: 130px;
+  border: none;
+  background-color: #ffffff;
+  z-index: 100000;
 }
 .thumb-section {
   display: flex;
@@ -547,7 +554,7 @@ main {
 
 
 .resume_like_price{
-  width: 350px;
+  width: 376px;
   height: 89px;
   position: fixed;
   background-color: #DB8876;
@@ -775,3 +782,193 @@ margin-right: 10px
     }
   }
 }
+
+@media (max-width: 375px) {
+    * {
+      margin: none;
+      padding: 0;
+    }
+    #modal{
+      width: 101%;
+      height: 101%;
+      margin-top: -17px;
+        label{
+          font-size: 24px;
+          margin: 14 0 6px 0;
+        }
+
+        input, textarea{
+          width: 338px;
+          border-radius: 5px;
+          border: none;
+          margin: 0;
+        }
+        .firstname, .lastname, .mail{
+          height: 76px;
+          justify-content: center;
+          margin: 14px 20px 0;
+        }
+        .user-message{
+          margin: 14px 20px 0;
+          height: 225px;
+
+        }
+        h1, h2{
+          font-size: 36px;
+          margin: 0;
+          margin: 0 14px
+        }
+        h1{
+          padding: 0;
+        }
+        h2{
+          margin-bottom: 26px;
+        }
+        #close{
+          width: 18.67px;
+          height: 18.67px;
+        }
+        .send {
+          width: 170px;
+          height: 35px;
+          margin: 26px 95px 0 ;
+
+        }
+
+    }
+  
+
+    .main-container{
+      display: flex;
+      flex-direction: column;
+     }
+
+
+    .logo {
+      margin:  48px 0 0 15px;
+      width: 150px;
+    }
+    header {
+      margin-bottom:  20px;
+    }
+    .photographer-header{
+      margin: 0;
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-color: white;
+      .contact-me {
+        position: fixed;
+        margin: auto;
+        padding: 0;
+        top: 745px;
+        width: 170px;
+        height: 35px;
+
+
+        
+   
+        
+      }
+
+      .id-picture {
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        right: -72px;
+      }
+      .photographer-profile{
+        width: 69%;
+        margin: 0 200px 0 0;
+        padding: 0 0 0 14px;
+        
+        .photographer-name {
+          font-size: 36px;
+        }
+          p {
+            margin: 10px;
+          }
+          p:nth-child(3) {
+            font-size: 13px;
+            color: #525252;
+            font-weight: 400;
+            margin: 4px 0;
+        }
+        p:nth-child(2) {
+          font-size: 13px;
+          color: #901C1C;
+          margin: 0;
+        }
+      }
+    }
+    .searchButton {
+      margin-top: 3px;
+      margin-right: 5px;
+      padding: 0 8px;
+      margin-bottom: 52px;
+    }
+    .short-by{
+      display: none;
+    }
+
+    .resume_like_price{
+      display: none;
+    }
+
+    main {
+      h1 {
+        width: 100%;
+        left: 234px;
+        top: 53px;
+        font-size: 14px;
+        margin: 0;
+      }
+      .thumb-section {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 auto;
+          .thumb-img{
+            margin: 0 auto;
+            border-radius: 5px;
+            grid-template-columns: 230px 45px 42px 18px;
+            grid-template-rows: 190px 34px;
+            color: $primaryBackgroundColor;
+            margin-bottom: 5px;
+            align-items: center;
+            height: auto;
+              .pictures {
+                border-radius: 5px;
+                width: 335px;
+                height: 190px;
+
+              }
+              .picture_name{
+                  font-size: 14px;
+                  color: $primaryBackgroundColor;
+
+              }
+              .picture_price{
+                font-size: 14px;
+                font-size: 14px;
+                color: $primaryBackgroundColor;
+
+
+              }
+              .like_counter{
+                font-size: 14px;
+                color: $primaryBackgroundColor;
+              }
+              .heart-icon{
+                width: 11px;
+                height: 11px;
+                padding-bottom: 21px;
+              }
+          }
+          
+      }
+
+
+    }
+
+  }
