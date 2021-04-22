@@ -132,6 +132,64 @@ header, main .main-section {
   margin: 0;
 }
 
+@media (max-width: 375px) {
+  .lightBox-modal {
+    width: 289px;
+    height: 248px;
+    margin: 0 auto;
+    /* margin: auto 0; */
+    -webkit-transform: translate(1px, 100%);
+            transform: translate(1px, 100%);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #close-lightbox {
+    position: absolute;
+    width: 11.53px;
+    height: 11.53px;
+    right: 17px;
+    top: 250px;
+    background-image: url(/image/Vector.png);
+    background-repeat: no-repeat;
+    z-index: 1000;
+    background-color: white;
+  }
+  .lightBox-container .navigation-back {
+    position: fixed;
+    width: 13.23px;
+    height: 94%;
+    margin: 0 27px;
+    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .lightBox-container .navigation-next {
+    position: fixed;
+    width: 13.23px;
+    height: 94%;
+    margin: 0 27px;
+    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .lightBox-container .pic-name-bloc {
+    text-align: left;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 500px;
+    margin-left: 12%;
+    margin-top: -4%;
+    z-index: 1000000;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -1133,7 +1191,7 @@ main .thumb-photographer .photographer-price {
             flex-direction: column;
   }
   .logo {
-    margin: 48px 0 0 15px;
+    margin: 35px 0 0 15px;
     width: 150px;
   }
   header {
@@ -1162,7 +1220,7 @@ main .thumb-photographer .photographer-price {
   }
   .photographer-header .photographer-profile {
     width: 69%;
-    margin: 0 200px 0 0;
+    margin: 0 200px 52px 0;
     padding: 0 0 0 14px;
   }
   .photographer-header .photographer-profile .photographer-name {
@@ -1186,7 +1244,6 @@ main .thumb-photographer .photographer-price {
     margin-top: 3px;
     margin-right: 5px;
     padding: 0 8px;
-    margin-bottom: 52px;
   }
   .short-by {
     display: none;
@@ -1250,6 +1307,28 @@ main .thumb-photographer .photographer-price {
     width: 11px;
     height: 11px;
     padding-bottom: 21px;
+  }
+  header nav {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin-bottom: 18px;
+  }
+  header nav :nth-child(5) {
+    margin-left: 0px;
+    margin-right: 4px;
+  }
+  header nav :nth-child(4) {
+    margin-right: 0px;
+  }
+  header nav :first-child {
+    margin-left: 0px;
+  }
+  .main-section .thumb-photographer {
+    height: 355px;
+  }
+  main h1 {
+    margin: -7px;
   }
 }
 /*# sourceMappingURL=style.css.map */

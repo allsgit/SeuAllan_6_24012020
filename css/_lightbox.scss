@@ -97,4 +97,62 @@ body{
   }
 }
 
+@media (max-width: 375px) {
+  .lightBox-modal{
+    width: 289px;
+    height: 248px;
+    margin: 0 auto;
+    /* margin: auto 0; */
+    transform: translate(1px, 100%);
+    align-items: center;
+  }
+  #close-lightbox {
+    position: absolute;
+    width: 11.53px;
+    height: 11.53px;
+    right: 17px;
+    top: 250px;
+    background-image: url(/image/Vector.png);
+    background-repeat: no-repeat;
+    z-index: 1000;
+    background-color: white;
+}
+.lightBox-container .navigation-back {
+  position: fixed;
+  width: 13.23px;
+  height: 94%;
+  margin: 0 27px;
+  background: url(/image/responsive-left.png) center center/8px 13.23px;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.lightBox-container .navigation-next {
+  position: fixed;
+  width: 13.23px;
+  height: 94%;
+  margin: 0 27px;
+  background: url(/image/responsive-left.png) center center/8px 13.23px;
+  background-repeat: no-repeat;
+  opacity: 0.9;
+  -webkit-transition: 0.2s;
+  transition: 0.2s;
+}
+.lightBox-container .pic-name-bloc {
+  text-align: left;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  top: 500px;
+  margin-left: 12%;
+  margin-top: -4%;
+  z-index: 1000000;
+}
+
+
+}
+
+
 

@@ -788,6 +788,8 @@ margin-right: 10px
       margin: none;
       padding: 0;
     }
+
+
     #modal{
       width: 101%;
       height: 101%;
@@ -845,7 +847,7 @@ margin-right: 10px
 
 
     .logo {
-      margin:  48px 0 0 15px;
+      margin:  35px 0 0 15px;
       width: 150px;
     }
     header {
@@ -879,7 +881,7 @@ margin-right: 10px
       }
       .photographer-profile{
         width: 69%;
-        margin: 0 200px 0 0;
+        margin: 0 200px 52px 0;
         padding: 0 0 0 14px;
         
         .photographer-name {
@@ -905,7 +907,6 @@ margin-right: 10px
       margin-top: 3px;
       margin-right: 5px;
       padding: 0 8px;
-      margin-bottom: 52px;
     }
     .short-by{
       display: none;
@@ -942,6 +943,7 @@ margin-right: 10px
                 width: 335px;
                 height: 190px;
 
+
               }
               .picture_name{
                   font-size: 14px;
@@ -971,4 +973,39 @@ margin-right: 10px
 
     }
 
+    // INDEX //
+    header {
+
+  
+      nav{
+        justify-content: center;
+        margin-bottom: 18px;
+      }
+    }
+
+    header nav :nth-child(5) {
+        margin-left: 0px; 
+        margin-right: 4px; 
+    }
+    header nav :nth-child(4) {
+        margin-right: 0px;
+    }
+    header nav :first-child {
+      margin-left: 0px;
+    }
+  .main-section{
+    .thumb-photographer{
+      height: 355px;
+    }
   }
+  main{
+    h1 {
+      margin: -7px;
+    }
+  }
+
+
+
+
+
+}
