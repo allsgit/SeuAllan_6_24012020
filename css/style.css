@@ -132,7 +132,20 @@ header, main .main-section {
   margin: 0;
 }
 
-@media (max-width: 375px) {
+@media (max-height: 667px) {
+  .lightBox-modal img, .lightBox-modal video {
+    position: relative;
+    -o-object-fit: cover;
+    object-fit: cover;
+    -o-object-position: center;
+    object-position: center;
+    height: 100%;
+    width: 100%;
+    margin: 0;
+    border-radius: 5px;
+    -webkit-transform: translate(0px, -50px);
+            transform: translate(0px, -50px);
+  }
   .lightBox-modal {
     width: 289px;
     height: 248px;
@@ -185,6 +198,238 @@ header, main .main-section {
     display: flex;
     top: 500px;
     margin-left: 12%;
+    margin-top: -4%;
+    z-index: 1000000;
+  }
+}
+
+@media (max-width: 375px) {
+  .lightBox-modal {
+    width: 289px;
+    height: 248px;
+    margin: 0 auto;
+    /* margin: auto 0; */
+    -webkit-transform: translate(1px, 100%);
+            transform: translate(1px, 100%);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #close-lightbox {
+    position: absolute;
+    width: 11.53px;
+    height: 11.53px;
+    right: 17px;
+    top: 200px;
+    background-image: url(/image/Vector.png);
+    background-repeat: no-repeat;
+    z-index: 1000;
+    background-color: white;
+  }
+  .lightBox-container .navigation-back {
+    position: fixed;
+    width: 13.23px;
+    height: 94%;
+    margin: 13px 27px;
+    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .lightBox-container .navigation-next {
+    position: fixed;
+    width: 13.23px;
+    height: 94%;
+    margin: 13px 27px;
+    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .lightBox-container .pic-name-bloc {
+    text-align: left;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 450px;
+    margin-left: 12%;
+    margin-top: -4%;
+    z-index: 1000000;
+  }
+}
+
+@media (max-width: 320px) {
+  .lightBox-modal {
+    width: 289px;
+    height: 248px;
+    margin: -39px auto;
+    /* margin: auto 0; */
+    -webkit-transform: translate(1px, 100%);
+            transform: translate(1px, 100%);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #close-lightbox {
+    position: absolute;
+    width: 11.53px;
+    height: 11.53px;
+    right: 1px;
+    top: 160px;
+    background-image: url(/image/Vector.png);
+    background-repeat: no-repeat;
+    z-index: 1000;
+    background-color: white;
+  }
+  .lightBox-container .navigation-back {
+    position: fixed;
+    width: 13.23px;
+    height: 94%;
+    margin: 18px 3px;
+    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .lightBox-container .navigation-next {
+    position: fixed;
+    width: 13.23px;
+    height: 94%;
+    margin: 13px 2px;
+    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .lightBox-container .pic-name-bloc {
+    text-align: left;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 409px;
+    margin-left: 5%;
+    margin-top: -4%;
+    z-index: 1000000;
+  }
+}
+
+@media (max-width: 414px) and (min-height: 736px) {
+  .lightBox-modal {
+    width: 289px;
+    height: 248px;
+    margin: 0 auto;
+    /* margin: auto 0; */
+    -webkit-transform: translate(1px, 100%);
+            transform: translate(1px, 100%);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #close-lightbox {
+    position: absolute;
+    width: 11.53px;
+    height: 11.53px;
+    right: 35px;
+    top: 250px;
+    background-image: url(/image/Vector.png);
+    background-repeat: no-repeat;
+    z-index: 1000;
+    background-color: white;
+  }
+  .lightBox-container .navigation-back {
+    position: fixed;
+    width: 13.23px;
+    height: 94%;
+    margin: 27px 40px;
+    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .lightBox-container .navigation-next {
+    position: fixed;
+    width: 13.23px;
+    height: 94%;
+    margin: 27px 40px;
+    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .lightBox-container .pic-name-bloc {
+    text-align: left;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 500px;
+    margin-left: 16%;
+    margin-top: -4%;
+    z-index: 1000000;
+  }
+}
+
+@media (max-width: 414px) and (min-height: 812px) {
+  .lightBox-modal {
+    width: 289px;
+    height: 248px;
+    margin: 0 auto;
+    /* margin: auto 0; */
+    -webkit-transform: translate(1px, 100%);
+            transform: translate(1px, 100%);
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  #close-lightbox {
+    position: absolute;
+    width: 11.53px;
+    height: 11.53px;
+    right: 21px;
+    top: 250px;
+    background-image: url(/image/Vector.png);
+    background-repeat: no-repeat;
+    z-index: 1000;
+    background-color: white;
+  }
+  .lightBox-container .navigation-back {
+    position: fixed;
+    width: 13.23px;
+    height: 94%;
+    margin: -5px 22px;
+    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .lightBox-container .navigation-next {
+    position: fixed;
+    width: 13.23px;
+    height: 94%;
+    margin: -5px 22px;
+    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background-repeat: no-repeat;
+    opacity: 0.9;
+    -webkit-transition: 0.2s;
+    transition: 0.2s;
+  }
+  .lightBox-container .pic-name-bloc {
+    text-align: left;
+    position: absolute;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    top: 500px;
+    margin-left: 13%;
     margin-top: -4%;
     z-index: 1000000;
   }
@@ -855,7 +1100,7 @@ main .thumb-photographer .photographer-price {
   width: 376px;
   height: 89px;
   position: fixed;
-  background-color: #DB8876;
+  background-color: #db8876;
   font-size: 24px;
   right: 36px;
   bottom: 0px;
@@ -1057,12 +1302,15 @@ main .thumb-photographer .photographer-price {
   margin-right: 43px;
 }
 
-@media (max-width: 640px) {
+@media (max-width: 320px) and (max-height: 568px) {
+  .photographer-header {
+    width: 100%;
+  }
   .label {
     display: none;
   }
   .main-container {
-    width: 375px;
+    width: 100%;
     margin: 0;
     padding: 0;
   }
@@ -1075,9 +1323,9 @@ main .thumb-photographer .photographer-price {
     height: 37, 5px;
   }
   main h1 {
-    width: 100%;
-    left: 234px;
-    top: 53px;
+    width: 120px;
+    top: 46px;
+    right: 20px;
     font-size: 14px;
     margin: 0;
   }
@@ -1106,32 +1354,21 @@ main .thumb-photographer .photographer-price {
     display: flex;
     -ms-flex-wrap: wrap;
         flex-wrap: wrap;
-    width: 375px;
+    width: 90%;
     padding-top: 41px;
     padding-right: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
   }
   header nav button {
     margin: 6px 5px 0 0px;
   }
-  header nav :first-child {
-    margin-left: 39px;
-  }
-  header nav :nth-child(4) {
-    margin-right: 51px;
-  }
   header nav :nth-child(5) {
-    margin-left: 56px;
     margin-right: 4px;
   }
   header nav :nth-child(6) {
     margin-right: 4px;
-  }
-}
-
-@media (max-width: 375px) {
-  * {
-    margin: none;
-    padding: 0;
   }
   #modal {
     width: 101%;
@@ -1139,14 +1376,16 @@ main .thumb-photographer .photographer-price {
     margin-top: -17px;
   }
   #modal label {
-    font-size: 24px;
+    font-size: 18px;
     margin: 14 0 6px 0;
   }
-  #modal input, #modal textarea {
-    width: 338px;
+  #modal input,
+  #modal textarea {
+    width: 281px;
     border-radius: 5px;
     border: none;
     margin: 0;
+    height: 78px;
   }
   #modal .firstname,
   #modal .lastname,
@@ -1161,16 +1400,17 @@ main .thumb-photographer .photographer-price {
     margin: 14px 20px 0;
     height: 225px;
   }
-  #modal h1, #modal h2 {
-    font-size: 36px;
+  #modal h1,
+  #modal h2 {
+    font-size: 20px;
     margin: 0;
-    margin: 0 14px;
+    margin: 0 23px;
   }
   #modal h1 {
     padding: 0;
   }
   #modal h2 {
-    margin-bottom: 26px;
+    margin-bottom: 20px;
   }
   #modal #close {
     width: 18.67px;
@@ -1179,7 +1419,9 @@ main .thumb-photographer .photographer-price {
   #modal .send {
     width: 170px;
     height: 35px;
-    margin: 26px 95px 0;
+    position: absolute;
+    bottom: 24px;
+    right: 85px;
   }
   .main-container {
     display: -webkit-box;
@@ -1208,7 +1450,239 @@ main .thumb-photographer .photographer-price {
     position: fixed;
     margin: auto;
     padding: 0;
-    top: 745px;
+    top: 531px;
+    width: 170px;
+    height: 35px;
+  }
+  .photographer-header .id-picture {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: -90px;
+  }
+  .photographer-header .photographer-profile {
+    width: 69%;
+    margin: 0 200px 52px 0;
+    padding: 0 0 0 14px;
+  }
+  .photographer-header .photographer-profile .photographer-name {
+    font-size: 36px;
+    margin-right: 0;
+    width: 250px;
+  }
+  .photographer-header .photographer-profile p {
+    margin: 10px;
+  }
+  .photographer-header .photographer-profile p:nth-child(3) {
+    font-size: 13px;
+    color: #525252;
+    font-weight: 400;
+    margin: 4px 0;
+  }
+  .photographer-header .photographer-profile p:nth-child(2) {
+    font-size: 13px;
+    color: #901c1c;
+    margin: 0;
+  }
+  .searchButton {
+    margin-top: 3px;
+    margin-right: 5px;
+    padding: 0 8px;
+  }
+  .short-by {
+    display: none;
+  }
+  .resume_like_price {
+    display: none;
+  }
+  main .thumb-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+  }
+  main .thumb-section .thumb-img {
+    margin: 0 auto;
+    border-radius: 5px;
+    -ms-grid-columns: 201px 45px 42px 18px;
+        grid-template-columns: 201px 45px 42px 18px;
+    -ms-grid-rows: 190px 34px;
+        grid-template-rows: 190px 34px;
+    color: #901C1C;
+    margin-bottom: 5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+    width: auto;
+  }
+  main .thumb-section .thumb-img .pictures {
+    border-radius: 5px;
+    width: 306px;
+    height: 190px;
+  }
+  main .thumb-section .thumb-img .picture_name {
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .picture_price {
+    font-size: 14px;
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .like_counter {
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .heart-icon {
+    width: 11px;
+    height: 11px;
+    padding-bottom: 21px;
+  }
+}
+
+@media (max-width: 414px) and (min-height: 736px) {
+  #modal {
+    width: 101%;
+    height: 101%;
+    margin-top: -17px;
+  }
+  #modal label {
+    font-size: 24px;
+    margin: 14 0 6px 0;
+  }
+  #modal input,
+  #modal textarea {
+    width: 374px;
+    border-radius: 5px;
+    border: none;
+    margin: 0;
+  }
+  #modal .firstname,
+  #modal .lastname,
+  #modal .mail {
+    height: 76px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 14px 20px 0;
+  }
+  #modal .user-message {
+    margin: 14px 20px 0;
+    height: 225px;
+  }
+  #modal h1,
+  #modal h2 {
+    font-size: 36px;
+    margin: 0;
+    margin: 0 14px;
+  }
+  #modal h1 {
+    padding: 0;
+  }
+  #modal h2 {
+    margin-bottom: 26px;
+  }
+  #modal #close {
+    width: 18.67px;
+    height: 18.67px;
+  }
+  #modal .send {
+    width: 170px;
+    height: 35px;
+    margin: 30px 122px 0;
+  }
+  .photographer-header {
+    width: 100%;
+  }
+  .label {
+    display: none;
+  }
+  .main-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .logo {
+    margin: 40px 0 0 20px;
+    width: 150px;
+  }
+  .logo img {
+    width: 150px;
+    height: 37, 5px;
+  }
+  .main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 6px;
+  }
+  .logo {
+    margin: 35px 0 0 15px;
+    width: 150px;
+  }
+  header {
+    margin-bottom: 20px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header .label {
+    top: 0;
+    left: 100px;
+  }
+  header nav {
+    margin: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 90%;
+    padding-top: 41px;
+    padding-right: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header nav button {
+    margin: 6px 5px 0 0px;
+  }
+  header nav :nth-child(5) {
+    margin-right: 4px;
+  }
+  header nav :nth-child(6) {
+    margin-right: 4px;
+  }
+  .photographer-header {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+  }
+  .photographer-header .contact-me {
+    position: fixed;
+    margin: auto;
+    padding: 0;
+    top: 700px;
     width: 170px;
     height: 35px;
   }
@@ -1225,6 +1699,8 @@ main .thumb-photographer .photographer-price {
   }
   .photographer-header .photographer-profile .photographer-name {
     font-size: 36px;
+    margin-right: 0;
+    width: 250px;
   }
   .photographer-header .photographer-profile p {
     margin: 10px;
@@ -1237,7 +1713,7 @@ main .thumb-photographer .photographer-price {
   }
   .photographer-header .photographer-profile p:nth-child(2) {
     font-size: 13px;
-    color: #901C1C;
+    color: #901c1c;
     margin: 0;
   }
   .searchButton {
@@ -1252,11 +1728,14 @@ main .thumb-photographer .photographer-price {
     display: none;
   }
   main h1 {
-    width: 100%;
-    left: 234px;
+    width: 120px;
     top: 53px;
+    right: 40px;
     font-size: 14px;
     margin: 0;
+  }
+  main .thumb-Photographer :last-child {
+    margin-bottom: 30px;
   }
   main .thumb-section {
     display: -webkit-box;
@@ -1308,27 +1787,769 @@ main .thumb-photographer .photographer-price {
     height: 11px;
     padding-bottom: 21px;
   }
+}
+
+@media (min-width: 375px) and (max-width: 414px) and (min-height: 810px) {
+  .photographer-header {
+    width: 100%;
+  }
+  .label {
+    display: none;
+  }
+  .main-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .logo {
+    margin: 40px 0 0 20px;
+    width: 150px;
+  }
+  .logo img {
+    width: 150px;
+    height: 37, 5px;
+  }
+  main h1 {
+    width: 120px;
+    top: 53px;
+    right: 40px;
+    font-size: 14px;
+    margin: 0;
+  }
+  main .thumb-Photographer :last-child {
+    margin-bottom: 30px;
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header .label {
+    top: 0;
+    left: 100px;
+  }
   header nav {
+    margin: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 90%;
+    padding-top: 41px;
+    padding-right: 0;
     -webkit-box-pack: center;
         -ms-flex-pack: center;
             justify-content: center;
-    margin-bottom: 18px;
+  }
+  header nav button {
+    margin: 6px 5px 0 0px;
   }
   header nav :nth-child(5) {
-    margin-left: 0px;
     margin-right: 4px;
   }
-  header nav :nth-child(4) {
-    margin-right: 0px;
+  header nav :nth-child(6) {
+    margin-right: 4px;
   }
-  header nav :first-child {
-    margin-left: 0px;
+  * {
+    margin: none;
+    padding: 0;
   }
-  .main-section .thumb-photographer {
-    height: 355px;
+  #modal {
+    width: 101%;
+    height: 101%;
+    margin-top: -17px;
+  }
+  #modal label {
+    font-size: 24px;
+    margin: 14 0 6px 0;
+  }
+  #modal input,
+  #modal textarea {
+    width: 338px;
+    border-radius: 5px;
+    border: none;
+    margin: 0;
+  }
+  #modal .firstname,
+  #modal .lastname,
+  #modal .mail {
+    height: 76px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 14px 20px 0;
+  }
+  #modal .user-message {
+    margin: 14px 20px 0;
+    height: 225px;
+  }
+  #modal h1,
+  #modal h2 {
+    font-size: 36px;
+    margin: 0;
+    margin: 0 14px;
+  }
+  #modal h1 {
+    padding: 0;
+  }
+  #modal h2 {
+    margin-bottom: 26px;
+  }
+  #modal #close {
+    width: 18.67px;
+    height: 18.67px;
+  }
+  #modal .send {
+    width: 170px;
+    height: 35px;
+    margin: 26px 95px 0;
+  }
+  .main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .logo {
+    margin: 35px 0 0 15px;
+    width: 150px;
+  }
+  header {
+    margin-bottom: 20px;
+  }
+  .photographer-header {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+  }
+  .photographer-header .contact-me {
+    position: fixed;
+    margin: auto;
+    padding: 0;
+    top: 750px;
+    width: 170px;
+    height: 35px;
+  }
+  .photographer-header .id-picture {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: -72px;
+  }
+  .photographer-header .photographer-profile {
+    width: 69%;
+    margin: 0 200px 52px 0;
+    padding: 0 0 0 14px;
+  }
+  .photographer-header .photographer-profile .photographer-name {
+    font-size: 36px;
+    margin-right: 0;
+    width: 250px;
+  }
+  .photographer-header .photographer-profile p {
+    margin: 10px;
+  }
+  .photographer-header .photographer-profile p:nth-child(3) {
+    font-size: 13px;
+    color: #525252;
+    font-weight: 400;
+    margin: 4px 0;
+  }
+  .photographer-header .photographer-profile p:nth-child(2) {
+    font-size: 13px;
+    color: #901c1c;
+    margin: 0;
+  }
+  .searchButton {
+    margin-top: 3px;
+    margin-right: 5px;
+    padding: 0 8px;
+  }
+  .short-by {
+    display: none;
+  }
+  .resume_like_price {
+    display: none;
+  }
+  main .thumb-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+  }
+  main .thumb-section .thumb-img {
+    margin: 0 auto;
+    border-radius: 5px;
+    -ms-grid-columns: 230px 45px 42px 18px;
+        grid-template-columns: 230px 45px 42px 18px;
+    -ms-grid-rows: 190px 34px;
+        grid-template-rows: 190px 34px;
+    color: #901C1C;
+    margin-bottom: 5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+    width: auto;
+  }
+  main .thumb-section .thumb-img .pictures {
+    border-radius: 5px;
+    width: 335px;
+    height: 190px;
+  }
+  main .thumb-section .thumb-img .picture_name {
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .picture_price {
+    font-size: 14px;
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .like_counter {
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .heart-icon {
+    width: 11px;
+    height: 11px;
+    padding-bottom: 21px;
+  }
+}
+
+@media (min-width: 375px) and (max-width: 414px) and (max-height: 667px) {
+  .photographer-header {
+    width: 100%;
+  }
+  .label {
+    display: none;
+  }
+  .main-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .logo {
+    margin: 40px 0 0 20px;
+    width: 150px;
+  }
+  .logo img {
+    width: 150px;
+    height: 37, 5px;
   }
   main h1 {
-    margin: -7px;
+    width: 120px;
+    top: 53px;
+    right: 40px;
+    font-size: 14px;
+    margin: 0;
+  }
+  main .thumb-Photographer :last-child {
+    margin-bottom: 30px;
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header .label {
+    top: 0;
+    left: 100px;
+  }
+  header nav {
+    margin: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 90%;
+    padding-top: 41px;
+    padding-right: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header nav button {
+    margin: 6px 5px 0 0px;
+  }
+  header nav :nth-child(5) {
+    margin-right: 4px;
+  }
+  header nav :nth-child(6) {
+    margin-right: 4px;
+  }
+  * {
+    margin: none;
+    padding: 0;
+  }
+  #modal {
+    width: 101%;
+    height: 101%;
+    margin-top: -17px;
+  }
+  #modal label {
+    font-size: 24px;
+    margin: 14 0 6px 0;
+  }
+  #modal input,
+  #modal textarea {
+    width: 338px;
+    border-radius: 5px;
+    border: none;
+    margin: 0;
+    height: 128px;
+  }
+  #modal .firstname,
+  #modal .lastname,
+  #modal .mail {
+    height: 76px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 14px 20px 0;
+  }
+  #modal .user-message {
+    margin: 14px 20px 0;
+    height: 225px;
+  }
+  #modal h1,
+  #modal h2 {
+    font-size: 36px;
+    margin: 0;
+    margin: 0 14px;
+  }
+  #modal h1 {
+    padding: 0;
+  }
+  #modal h2 {
+    margin-bottom: 26px;
+  }
+  #modal #close {
+    width: 18.67px;
+    height: 18.67px;
+  }
+  #modal .send {
+    width: 170px;
+    height: 35px;
+    margin: 26px 95px 0;
+    position: absolute;
+    bottom: 26px;
+  }
+  .main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+  }
+  .logo {
+    margin: 35px 0 0 15px;
+    width: 150px;
+  }
+  header {
+    margin-bottom: 20px;
+  }
+  .photographer-header {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+  }
+  .photographer-header .contact-me {
+    position: fixed;
+    margin: auto;
+    padding: 0;
+    top: 600px;
+    width: 170px;
+    height: 35px;
+  }
+  .photographer-header .id-picture {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: -72px;
+  }
+  .photographer-header .photographer-profile {
+    width: 69%;
+    margin: 0 200px 52px 0;
+    padding: 0 0 0 14px;
+  }
+  .photographer-header .photographer-profile .photographer-name {
+    font-size: 36px;
+    margin-right: 0;
+    width: 250px;
+  }
+  .photographer-header .photographer-profile p {
+    margin: 10px;
+  }
+  .photographer-header .photographer-profile p:nth-child(3) {
+    font-size: 13px;
+    color: #525252;
+    font-weight: 400;
+    margin: 4px 0;
+  }
+  .photographer-header .photographer-profile p:nth-child(2) {
+    font-size: 13px;
+    color: #901c1c;
+    margin: 0;
+  }
+  .searchButton {
+    margin-top: 3px;
+    margin-right: 5px;
+    padding: 0 8px;
+  }
+  .short-by {
+    display: none;
+  }
+  .resume_like_price {
+    display: none;
+  }
+  main .thumb-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+  }
+  main .thumb-section .thumb-img {
+    margin: 0 auto;
+    border-radius: 5px;
+    -ms-grid-columns: 230px 45px 42px 18px;
+        grid-template-columns: 230px 45px 42px 18px;
+    -ms-grid-rows: 190px 34px;
+        grid-template-rows: 190px 34px;
+    color: #901C1C;
+    margin-bottom: 5px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+    width: auto;
+  }
+  main .thumb-section .thumb-img .pictures {
+    border-radius: 5px;
+    width: 335px;
+    height: 190px;
+  }
+  main .thumb-section .thumb-img .picture_name {
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .picture_price {
+    font-size: 14px;
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .like_counter {
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .heart-icon {
+    width: 11px;
+    height: 11px;
+    padding-bottom: 21px;
+  }
+}
+
+@media (min-width: 767px) and (max-width: 900px) {
+  .main-container {
+    width: 568px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .photographer-header {
+    width: 100%;
+  }
+  .label {
+    display: none;
+  }
+  .main-container {
+    width: 100%;
+    margin: 0;
+    padding: 0;
+  }
+  .logo {
+    margin: 40px 0 0 20px;
+    width: 150px;
+  }
+  .logo img {
+    width: 150px;
+    height: 37, 5px;
+  }
+  main h1 {
+    width: 120px;
+    top: 53px;
+    right: 40px;
+    font-size: 14px;
+    margin: 0;
+  }
+  main .thumb-Photographer :last-child {
+    margin-bottom: 30px;
+  }
+  header {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+  }
+  header .label {
+    top: 0;
+    left: 100px;
+  }
+  header nav {
+    margin: 0px;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
+    width: 90%;
+    padding-top: 41px;
+    padding-right: 0;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  header nav button {
+    margin: 6px 5px 0 0px;
+  }
+  header nav :nth-child(5) {
+    margin-right: 4px;
+  }
+  header nav :nth-child(6) {
+    margin-right: 4px;
+  }
+  * {
+    margin: none;
+    padding: 0;
+  }
+  #modal {
+    width: 49%;
+    height: 73%;
+    margin-top: -17px;
+    right: 48%;
+  }
+  #modal label {
+    font-size: 24px;
+    margin: 14 0 6px 0;
+  }
+  #modal input,
+  #modal textarea {
+    width: 338px;
+    border-radius: 5px;
+    border: none;
+    margin: 0;
+    height: 120px;
+  }
+  #modal .firstname,
+  #modal .lastname,
+  #modal .mail {
+    height: 76px;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 14px 20px 0;
+  }
+  #modal .user-message {
+    margin: 14px 20px 0;
+    height: 225px;
+  }
+  #modal h1,
+  #modal h2 {
+    font-size: 36px;
+    margin: 0;
+    margin: 0 14px;
+  }
+  #modal h1 {
+    padding: 0;
+  }
+  #modal h2 {
+    margin-bottom: 26px;
+  }
+  #modal #close {
+    width: 18.67px;
+    height: 18.67px;
+  }
+  #modal .send {
+    width: 170px;
+    height: 35px;
+    position: absolute;
+    bottom: 124px;
+    margin: 26px 95px 0;
+  }
+  .main-container {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    margin-left: 6px;
+  }
+  .logo {
+    margin: 35px 0 0 88px;
+    width: 150px;
+  }
+  header {
+    margin-bottom: 20px;
+  }
+  .photographer-header {
+    margin: 0;
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background-color: white;
+  }
+  .photographer-header .contact-me {
+    position: fixed;
+    margin: auto;
+    padding: 0;
+    top: 960px;
+    width: 170px;
+    height: 35px;
+  }
+  .photographer-header .id-picture {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    right: 60px;
+  }
+  .photographer-header .photographer-profile {
+    width: 69%;
+    margin: 0 80px 52px 0;
+    padding: 0 0 0 14px;
+  }
+  .photographer-header .photographer-profile .photographer-name {
+    font-size: 36px;
+    margin-right: 0;
+    width: 250px;
+  }
+  .photographer-header .photographer-profile p {
+    margin: 10px;
+  }
+  .photographer-header .photographer-profile p:nth-child(3) {
+    font-size: 13px;
+    color: #525252;
+    font-weight: 400;
+    margin: 4px 0;
+  }
+  .photographer-header .photographer-profile p:nth-child(2) {
+    font-size: 13px;
+    color: #901c1c;
+    margin: 0;
+  }
+  .searchButton {
+    margin-top: 3px;
+    margin-right: 5px;
+    padding: 0 8px;
+  }
+  .short-by {
+    display: none;
+  }
+  .resume_like_price {
+    display: none;
+  }
+  main .thumb-section {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+    margin: 0 auto;
+  }
+  main .thumb-section .thumb-img {
+    border-radius: 5px;
+    -ms-grid-columns: 174px 45px 42px 18px;
+        grid-template-columns: 174px 45px 42px 18px;
+    -ms-grid-rows: 190px 34px;
+        grid-template-rows: 190px 34px;
+    color: #901C1C;
+    margin: 0 auto;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+    height: auto;
+    width: 290px;
+    margin: 0 10px;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+  main .thumb-section .thumb-img .pictures {
+    border-radius: 5px;
+    width: 279px;
+    height: 190px;
+  }
+  main .thumb-section .thumb-img .picture_name {
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .picture_price {
+    font-size: 14px;
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .like_counter {
+    font-size: 14px;
+    color: #901C1C;
+  }
+  main .thumb-section .thumb-img .heart-icon {
+    width: 11px;
+    height: 11px;
+    padding-bottom: 21px;
+  }
+}
+
+@media (min-width: 901px) and (max-width: 1024px) {
+  .resume_like_price {
+    right: 187px;
   }
 }
 /*# sourceMappingURL=style.css.map */

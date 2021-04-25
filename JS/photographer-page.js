@@ -33,6 +33,7 @@ function createHeader(photographers) {
 			IdPhotoImg.src = `/image/Photographers ID Photos/${element.portrait}`;
 
 			IdPhoto.classList = 'id-picture';
+			IdPhoto.setAttribute("aria-label", "photo de profil")
 			photographerName.classList = 'photographer-name';
 			photographerLocation.classList = 'photographer-location-profile';
 			photographerTagLine.classList = 'photographer-tag-profile';
@@ -69,11 +70,13 @@ function createGallery(media) {
 			if (element.image) {
 				let photographerPic = document.createElement('img');
 				const thumbSection = document.querySelector('.thumb-section');
+				thumbSection.setAttribute("aria-label","gallerie photo")
 				const galleryPic = document.createElement('div');
 				galleryPic.classList = 'thumb-img';
 				thumbSection.appendChild(galleryPic);
 				galleryPic.appendChild(photographerPic);
 				photographerPic.classList = 'pictures';
+				photographerPic.setAttribute ("aria-label", "photographie")
 				photographerPic.src = `/image/${namePhotographer}/${element.image}`;
 
 				const picName = document.createElement('p');
@@ -112,6 +115,7 @@ function createGallery(media) {
 				thumbSection.appendChild(galleryPic);
 				galleryPic.appendChild(photographerPic);
 				photographerPic.classList = 'pictures';
+				photographerPic.setAttribute ("aria-label", "video")
 				photographerPic.src = `/image/${namePhotographer}/${element.video}`;
 				const picName = document.createElement('p');
 				picName.classList = 'picture_name';
@@ -223,6 +227,7 @@ function lightBoxShow(media) {
 	const lightbox = document.querySelector('.lightBox-container');
 	const pictures = document.getElementsByClassName('pictures');
 	const lightBoxBox = document.querySelector('.lightBox-modal');
+	
 
 	let namelight = media.filter((photo) => photo.photographerId == idPhotographer).map(element => {
 		if (element.image) {
@@ -251,9 +256,12 @@ function lightBoxShow(media) {
 			if (e.target === document.querySelector('video')) {
 				img = document.createElement('video');
 				img.setAttribute('controls', '');
+				img.setAttribute("aria-label", "video")
 				lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, " ");
 			} else {
 				img = document.createElement('img');
+				img.setAttribute("aria-label", "photographie")
+
 				lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
 			}
 	
@@ -274,6 +282,8 @@ function lightBoxShow(media) {
 
 			const next = document.querySelector('.navigation-next');
 			const previous = document.querySelector('.navigation-back');
+			previous.setAttribute("aria-label", "défilement photo arrière")
+			next.setAttribute("aria-label", "défilement photo avant")
 
 			function navNext() {
 				if (i >= arrayPictures.length - 1) i = -1;
@@ -339,7 +349,9 @@ function lightBoxShow(media) {
 
 	//
 	//**CLOSE LIGHTBOX ON CLICK  */
-	document.getElementById('close-lightbox').addEventListener('click', () => {
+const closeLightBox = document.getElementById('close-lightbox')
+closeLightBox.setAttribute("aria-label", "fermer l'aperçu")
+	closeLightBox.addEventListener('click', () => {
 		if((document.querySelector(".pic-name-bloc"))) {
 			lightbox.removeChild(document.querySelector(".pic-name-bloc"));
 		}
@@ -353,7 +365,9 @@ function lightBoxShow(media) {
 function contactFunction(photographers) {
 
 const closeCrossButton = document.querySelector('#close');
+closeCrossButton.setAttribute("aria-label", "fermer le formulaire de contact")
 const contactMeButton = document.querySelector('.contact-me');
+contactMeButton.setAttribute("aria-label", "boutton contacter moi")
 const contactModal = document.getElementById('modal');
 const mainContainer = document.querySelector('.main-container');
 const firstName = document.getElementById('prenom');

@@ -21,6 +21,9 @@ function displayPhotographers(photographers) {
 			// ***** PHOTOGRAPHER PICTURE *******
 			const photoId_pic = document.createElement('div');
 			photoId_pic.className = 'id-picture';
+			photoId_pic.setAttribute("aria-label", "photo de profil")
+
+			
 			const image = document.createElement('img');
 			image.src = `/image/Photographers ID Photos/${element.portrait}`;
 			photoId_pic.appendChild(image);
