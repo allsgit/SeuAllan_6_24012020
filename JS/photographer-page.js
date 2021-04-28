@@ -265,11 +265,11 @@ function lightBoxShow(media) {
 				img.setAttribute('controls', '');
 				img.setAttribute("aria-label", "video")
 				lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, " ");
-				img.setAttribute("aria-label", namelight[i].replace(lightboxregexVideo, " "))
+				img.setAttribute("alt", namelight[i].replace(lightboxregexVideo, " "))
 			} else {
 				img = document.createElement('img');
 				lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
-				img.setAttribute("aria-label", namelight[i].replace(lightboxregex, " "))
+				img.setAttribute("alt", namelight[i].replace(lightboxregex, " "))
 			}
 	
 			img.src = e.target.src;
@@ -300,13 +300,13 @@ function lightBoxShow(media) {
 					img = document.createElement('video');
 					img.setAttribute('controls', '');
 					lightBoxBox.appendChild(img);
-					img.setAttribute("aria-label", namelight[i].replace(lightboxregexVideo, " "))
+					img.setAttribute("alt", namelight[i].replace(lightboxregexVideo, " "))
 					lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, " ");
 				} else {
 					lightBoxBox.innerHTML = ' ';
 					img = document.createElement('img');
 					lightBoxBox.appendChild(img);
-					img.setAttribute("aria-label", namelight[i].replace(lightboxregex, " "))
+					img.setAttribute("alt", namelight[i].replace(lightboxregex, " "))
 					lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
 					
 
@@ -333,14 +333,14 @@ function lightBoxShow(media) {
 					img = document.createElement('video');
 					img.setAttribute('controls', '');
 					lightBoxBox.appendChild(img);
-					img.setAttribute("aria-label", namelight[i].replace(lightboxregexVideo, " "))
+					img.setAttribute("alt", namelight[i].replace(lightboxregexVideo, " "))
 					lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, " ");
 					
 				} else {
 					lightBoxBox.innerHTML = ' ';
 					img = document.createElement('img');
 					lightBoxBox.appendChild(img);
-					img.setAttribute("aria-label", namelight[i].replace(lightboxregex, " "))
+					img.setAttribute("alt", namelight[i].replace(lightboxregex, " "))
 					lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
 				}
 				img.src = pictures[i].src;
