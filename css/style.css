@@ -26,7 +26,7 @@ header, main .main-section {
   padding: 0;
   width: 43px;
   height: 43px;
-  right: 300px;
+  right: 225px;
   top: 100px;
   background-image: url("/image/close_lightbox.png");
   background-repeat: no-repeat;
@@ -77,10 +77,10 @@ header, main .main-section {
 
 .lightBox-container .navigation-next,
 .lightBox-container .navigation-back {
-  position: fixed;
+  position: absolute;
   width: 29px;
   height: 100%;
-  margin: 0 300px;
+  margin: 0 200px;
   background: url("/image/left-arrow.png") center center/29px 48px;
   background-repeat: no-repeat;
   opacity: 0.9;
@@ -101,23 +101,22 @@ header, main .main-section {
 
 .lightBox-container .pic-name-bloc {
   text-align: left;
-  position: absolute;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  margin-left: 25%;
-  margin-top: -4%;
+  margin-left: 20%;
+  margin-top: -74px;
   z-index: 1000000;
 }
 
 .lightBox-modal {
+  position: relative;
   width: 850px;
   height: 600px;
-  margin: 0 auto;
+  margin: 5% auto;
 }
 
 .lightBox-modal img, .lightBox-modal video {
-  position: relative;
   -o-object-fit: cover;
      object-fit: cover;
   -o-object-position: center;
@@ -435,6 +434,24 @@ header, main .main-section {
   }
 }
 
+@media (min-width: 1920px) {
+  .lightBox-modal {
+    margin: 10% auto;
+  }
+  .lightBox-container .navigation-next,
+  .lightBox-container .navigation-back {
+    margin: 0px 400px;
+  }
+  #close-lightbox {
+    right: 400px;
+    top: 200px;
+  }
+  .lightBox-container .pic-name-bloc {
+    margin-left: 28%;
+    margin-top: -200px;
+  }
+}
+
 a {
   text-decoration: none;
 }
@@ -484,7 +501,7 @@ nav {
 .label {
   width: 198px;
   height: 30px;
-  position: absolute;
+  position: fixed;
   background-color: white;
   left: 49%;
   background: #D3573C;
@@ -494,6 +511,7 @@ nav {
   font-size: 18px;
   font-weight: 700;
   text-align: center;
+  display: none;
 }
 
 .searchButton {
@@ -607,19 +625,28 @@ main .thumb-photographer .description {
   font-size: 10px;
 }
 
-main .thumb-photographer .photographer-location {
+main .thumb-photographer .information {
+  text-align: center;
+}
+
+main .thumb-photographer .information .photographer-location {
   margin-top: 17px;
   color: #901C1C;
   font-weight: 400;
+  font-size: 13px;
+  margin-bottom: 0px;
 }
 
-main .thumb-photographer .photographer-tag {
+main .thumb-photographer .information .photographer-tag {
   color: black;
+  font-size: 10px;
+  margin: 2px;
 }
 
-main .thumb-photographer .photographer-price {
+main .thumb-photographer .information .photographer-price {
   font-size: 9px;
   color: #757575;
+  margin-top: 2px;
 }
 
 #modal {
@@ -766,6 +793,13 @@ main .thumb-photographer .photographer-price {
   margin: 26px 0 0 35px;
   outline: none;
   cursor: pointer;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+#modal .send:hover {
+  background-color: #d3573c;
+  color: black;
 }
 
 #modal #close {
@@ -828,7 +862,8 @@ main .thumb-photographer .photographer-price {
 }
 
 .photographer-header .contact-me:hover {
-  background-color: #be4c4c;
+  background-color: #D3573c;
+  color: black;
 }
 
 .photographer-header .id-picture {
@@ -850,7 +885,7 @@ main .thumb-photographer .photographer-price {
   padding-right: 30px;
 }
 
-.short-by {
+.sort-by {
   position: relative;
   font-weight: 700;
   margin-left: 100px;
@@ -868,8 +903,12 @@ main .thumb-photographer .photographer-price {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
   left: 60px;
-  height: 62px;
+  height: 55px;
   width: 160px;
   margin-left: 20px;
   border-radius: 5px;
@@ -883,27 +922,50 @@ main .thumb-photographer .photographer-price {
   z-index: 1000;
 }
 
+.dropdown-open .dateUL {
+  position: absolute;
+  top: 65px;
+  left: 31px;
+}
+
+.dropdown-open .nameUL {
+  position: absolute;
+  top: 120px;
+  left: 31px;
+}
+
+.dropdown-open .popularityUl {
+  position: absolute;
+  top: 10px;
+  left: 13px;
+}
+
 .dropdown-open .btnfilter {
   background-color: transparent;
   color: white;
   font-weight: 700;
-  z-index: 10000;
 }
 
 .dropdown-open .up_arrow_icon {
   -webkit-transition: 0.2s;
   transition: 0.2s;
   cursor: pointer;
+  position: absolute;
+  right: 15px;
+  top: 22px;
+  z-index: 99999;
 }
 
 .dropdown-open ul {
-  margin: O;
   padding: 0;
   width: 100%;
   font-weight: 700;
   list-style: none;
   text-decoration: none;
   text-align: left;
+  margin-top: 0;
+  top: 9px;
+  position: absolute;
 }
 
 .dropdown-open ul :first-child {
@@ -925,7 +987,7 @@ main .thumb-photographer .photographer-price {
 }
 
 .dropdown-open ul li:not(.trait) {
-  line-height: 23, 44px;
+  line-height: 23.44px;
   margin: 10px 0 20px;
   padding-left: 20px;
 }
@@ -936,6 +998,20 @@ main .thumb-photographer .photographer-price {
   border: none;
   background-color: #ffffff;
   z-index: 100000;
+  position: absolute;
+  top: 57px;
+  left: 12px;
+}
+
+.menu-underline2 {
+  height: 1px;
+  width: 130px;
+  border: none;
+  background-color: #ffffff;
+  z-index: 100000;
+  position: absolute;
+  top: 110px;
+  left: 12px;
 }
 
 .thumb-section {
@@ -1259,7 +1335,6 @@ main .thumb-photographer .photographer-price {
 }
 
 .thumb-photographer-side .id-picture {
-  margin-left: none;
   width: 100px;
   height: 100px;
   border-radius: 50%;
@@ -1320,7 +1395,7 @@ main .thumb-photographer .photographer-price {
   }
   .logo img {
     width: 150px;
-    height: 37, 5px;
+    height: 37.5px;
   }
   main h1 {
     width: 120px;
@@ -1377,7 +1452,7 @@ main .thumb-photographer .photographer-price {
   }
   #modal label {
     font-size: 18px;
-    margin: 14 0 6px 0;
+    margin: 14px 0 6px 0;
   }
   #modal input,
   #modal textarea {
@@ -1422,6 +1497,9 @@ main .thumb-photographer .photographer-price {
     position: absolute;
     bottom: 24px;
     right: 85px;
+  }
+  #modal .send:hover {
+    background-color: #d3573c;
   }
   .main-container {
     display: -webkit-box;
@@ -1489,7 +1567,7 @@ main .thumb-photographer .photographer-price {
     margin-right: 5px;
     padding: 0 8px;
   }
-  .short-by {
+  .sort-by {
     display: none;
   }
   .resume_like_price {
@@ -1556,7 +1634,7 @@ main .thumb-photographer .photographer-price {
   }
   #modal label {
     font-size: 24px;
-    margin: 14 0 6px 0;
+    margin: 0 0 6px 0;
   }
   #modal input,
   #modal textarea {
@@ -1616,7 +1694,7 @@ main .thumb-photographer .photographer-price {
   }
   .logo img {
     width: 150px;
-    height: 37, 5px;
+    height: 37.5px;
   }
   .main-container {
     display: -webkit-box;
@@ -1721,7 +1799,7 @@ main .thumb-photographer .photographer-price {
     margin-right: 5px;
     padding: 0 8px;
   }
-  .short-by {
+  .sort-by {
     display: none;
   }
   .resume_like_price {
@@ -1807,7 +1885,7 @@ main .thumb-photographer .photographer-price {
   }
   .logo img {
     width: 150px;
-    height: 37, 5px;
+    height: 37.5px;
   }
   main h1 {
     width: 120px;
@@ -1858,7 +1936,7 @@ main .thumb-photographer .photographer-price {
     margin-right: 4px;
   }
   * {
-    margin: none;
+    margin: 0;
     padding: 0;
   }
   #modal {
@@ -1868,7 +1946,7 @@ main .thumb-photographer .photographer-price {
   }
   #modal label {
     font-size: 24px;
-    margin: 14 0 6px 0;
+    margin: 0 0 6px 0;
   }
   #modal input,
   #modal textarea {
@@ -1977,7 +2055,7 @@ main .thumb-photographer .photographer-price {
     margin-right: 5px;
     padding: 0 8px;
   }
-  .short-by {
+  .sort-by {
     display: none;
   }
   .resume_like_price {
@@ -2054,7 +2132,7 @@ main .thumb-photographer .photographer-price {
   }
   .logo img {
     width: 150px;
-    height: 37, 5px;
+    height: 37.5px;
   }
   main h1 {
     width: 120px;
@@ -2105,7 +2183,7 @@ main .thumb-photographer .photographer-price {
     margin-right: 4px;
   }
   * {
-    margin: none;
+    margin: 0;
     padding: 0;
   }
   #modal {
@@ -2115,7 +2193,7 @@ main .thumb-photographer .photographer-price {
   }
   #modal label {
     font-size: 24px;
-    margin: 14 0 6px 0;
+    margin: 0 0 6px 0;
   }
   #modal input,
   #modal textarea {
@@ -2227,7 +2305,7 @@ main .thumb-photographer .photographer-price {
     margin-right: 5px;
     padding: 0 8px;
   }
-  .short-by {
+  .sort-by {
     display: none;
   }
   .resume_like_price {
@@ -2313,7 +2391,7 @@ main .thumb-photographer .photographer-price {
   }
   .logo img {
     width: 150px;
-    height: 37, 5px;
+    height: 37.5px;
   }
   main h1 {
     width: 120px;
@@ -2364,7 +2442,7 @@ main .thumb-photographer .photographer-price {
     margin-right: 4px;
   }
   * {
-    margin: none;
+    margin: 0;
     padding: 0;
   }
   #modal {
@@ -2375,7 +2453,7 @@ main .thumb-photographer .photographer-price {
   }
   #modal label {
     font-size: 24px;
-    margin: 14 0 6px 0;
+    margin: 0 0 6px 0;
   }
   #modal input,
   #modal textarea {
@@ -2488,7 +2566,7 @@ main .thumb-photographer .photographer-price {
     margin-right: 5px;
     padding: 0 8px;
   }
-  .short-by {
+  .sort-by {
     display: none;
   }
   .resume_like_price {

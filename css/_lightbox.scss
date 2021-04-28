@@ -1,14 +1,12 @@
 // lightbox //
-body{
 
-}
 #close-lightbox {
   position: fixed;
   margin: 0;
   padding: 0;
   width: 43px;
   height: 43px;
-  right: 300px;
+  right: 225px;
   top: 100px;
   background-image: url('/image/close_lightbox.png');
   background-repeat: no-repeat;
@@ -48,10 +46,10 @@ body{
 
   .navigation-next,
   .navigation-back {
-    position: fixed;
+    position: absolute;
     width: 29px;
     height: 100%;
-    margin: 0 300px;
+    margin: 0 200px;
     background: url('/image/left-arrow.png') center center / 29px 48px;
     background-repeat: no-repeat;
     opacity: 0.9;
@@ -66,24 +64,23 @@ body{
   }
   .pic-name-bloc {
     text-align: left;
-    position: absolute;
     display: flex;
-    margin-left: 25%;
-    margin-top: -4%;
+    margin-left: 20%;
+    margin-top: -74px;
     z-index: 1000000;
   }
 }
 .lightBox-modal {
+  position: relative;
   width: 850px;
   height: 600px;
-  margin: 0 auto;
+  margin: 5% auto;
 
 
 
 
 
   img, video {
-    position: relative;
     object-fit:cover;
     object-position: center;
     height: 100%;
@@ -388,6 +385,24 @@ body{
 }
 }
 
+@media (min-width : 1920px) {
+  .lightBox-modal{
+    margin: 10% auto;
+  }
 
+.lightBox-container .navigation-next, .lightBox-container .navigation-back {
+  margin: 0px 400px;
+}
+
+#close-lightbox {
+  right: 400px;
+  top: 200px;
+}
+
+.lightBox-container .pic-name-bloc {
+  margin-left: 28%;
+  margin-top: -200px;
+}
+}
 
 

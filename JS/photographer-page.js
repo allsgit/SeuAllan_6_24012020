@@ -33,7 +33,7 @@ function createHeader(photographers) {
 			IdPhotoImg.src = `/image/Photographers ID Photos/${element.portrait}`;
 
 			IdPhoto.classList = 'id-picture';
-			IdPhoto.setAttribute("aria-label", "photo de profil")
+			IdPhoto.setAttribute("alt", " ")
 			photographerName.classList = 'photographer-name';
 			photographerLocation.classList = 'photographer-location-profile';
 			photographerTagLine.classList = 'photographer-tag-profile';
@@ -68,6 +68,8 @@ function createGallery(media) {
 		/*     .sort ((a, b) => b.likes - a.likes) */
 		.map((element) => {
 			if (element.image) {
+				const regex = /(_)|(.jpg)/g;
+				let replacedName = element.image.replace(regex, ' ');
 				let photographerPic = document.createElement('img');
 				const thumbSection = document.querySelector('.thumb-section');
 				thumbSection.setAttribute("aria-label","gallerie photo")
@@ -78,13 +80,13 @@ function createGallery(media) {
 				photographerPic.classList = 'pictures';
 				photographerPic.setAttribute ("aria-label", "photographie")
 				photographerPic.src = `/image/${namePhotographer}/${element.image}`;
+				photographerPic.setAttribute ("aria-label", `${replacedName}, closeup view`)
 
 				const picName = document.createElement('p');
 				picName.classList = 'picture_name';
 				galleryPic.appendChild(picName);
 
-				const regex = /(_)|(.jpg)/g;
-				let replacedName = element.image.replace(regex, ' ');
+		
 				picName.innerText = replacedName;
 
 				const picPrice = document.createElement('p');
@@ -94,8 +96,10 @@ function createGallery(media) {
 
 				const heartIcon = document.createElement('img');
 				heartIcon.classList = 'heart-icon';
+				heartIcon.setAttribute("alt","like")
 				galleryPic.appendChild(heartIcon);
 				heartIcon.src = '/image/heart.png';
+				
 
 				let likes = element.likes;
 				const likeCounter = document.createElement('p');
@@ -108,6 +112,8 @@ function createGallery(media) {
 					likeCounter.innerText = likes;
 				});
 			} else if (element.video) {
+				const regexVideo = /(_)|(.mp4)|(587740985637)/g;
+				let replacedName = element.video.replace(regexVideo, ' ');
 				let photographerPic = document.createElement('video');
 				const thumbSection = document.querySelector('.thumb-section');
 				const galleryPic = document.createElement('div');
@@ -115,7 +121,7 @@ function createGallery(media) {
 				thumbSection.appendChild(galleryPic);
 				galleryPic.appendChild(photographerPic);
 				photographerPic.classList = 'pictures';
-				photographerPic.setAttribute ("aria-label", "video")
+				photographerPic.setAttribute ("aria-label", `${replacedName}, closeup view`)
 				photographerPic.src = `/image/${namePhotographer}/${element.video}`;
 				const picName = document.createElement('p');
 				picName.classList = 'picture_name';
@@ -137,8 +143,8 @@ function createGallery(media) {
 				likeCounter.innerText = likes;
 				galleryPic.appendChild(likeCounter);
 
-				const regexVideo = /(_)|(.mp4)|(587740985637)/g;
-				let replacedName = element.video.replace(regexVideo, ' ');
+				
+				
 				picName.innerText = replacedName;
 
 				heartIcon.addEventListener('click', () => {
@@ -225,6 +231,7 @@ function filterBy(media, photographers) {
 // NOTE // * LIGHTBOX FUNCTION **** //
 function lightBoxShow(media) {
 	const lightbox = document.querySelector('.lightBox-container');
+	lightbox.setAttribute("aria-label", "image closeup view")
 	const pictures = document.getElementsByClassName('pictures');
 	const lightBoxBox = document.querySelector('.lightBox-modal');
 	
@@ -258,11 +265,11 @@ function lightBoxShow(media) {
 				img.setAttribute('controls', '');
 				img.setAttribute("aria-label", "video")
 				lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, " ");
+				img.setAttribute("aria-label", namelight[i].replace(lightboxregexVideo, " "))
 			} else {
 				img = document.createElement('img');
-				img.setAttribute("aria-label", "photographie")
-
 				lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
+				img.setAttribute("aria-label", namelight[i].replace(lightboxregex, " "))
 			}
 	
 			img.src = e.target.src;
@@ -282,8 +289,8 @@ function lightBoxShow(media) {
 
 			const next = document.querySelector('.navigation-next');
 			const previous = document.querySelector('.navigation-back');
-			previous.setAttribute("aria-label", "défilement photo arrière")
-			next.setAttribute("aria-label", "défilement photo avant")
+			previous.setAttribute("aria-label", "Previous image")
+			next.setAttribute("aria-label", "Next image")
 
 			function navNext() {
 				if (i >= arrayPictures.length - 1) i = -1;
@@ -293,13 +300,15 @@ function lightBoxShow(media) {
 					img = document.createElement('video');
 					img.setAttribute('controls', '');
 					lightBoxBox.appendChild(img);
+					img.setAttribute("aria-label", namelight[i].replace(lightboxregexVideo, " "))
 					lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, " ");
-
 				} else {
 					lightBoxBox.innerHTML = ' ';
 					img = document.createElement('img');
 					lightBoxBox.appendChild(img);
+					img.setAttribute("aria-label", namelight[i].replace(lightboxregex, " "))
 					lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
+					
 
 				}
 				img.src = pictures[i].src;
@@ -324,15 +333,15 @@ function lightBoxShow(media) {
 					img = document.createElement('video');
 					img.setAttribute('controls', '');
 					lightBoxBox.appendChild(img);
+					img.setAttribute("aria-label", namelight[i].replace(lightboxregexVideo, " "))
 					lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, " ");
-
 					
 				} else {
 					lightBoxBox.innerHTML = ' ';
 					img = document.createElement('img');
 					lightBoxBox.appendChild(img);
+					img.setAttribute("aria-label", namelight[i].replace(lightboxregex, " "))
 					lightboxPicName.innerText = namelight[i].replace(lightboxregex, " ");
-
 				}
 				img.src = pictures[i].src;
 				
@@ -350,7 +359,7 @@ function lightBoxShow(media) {
 	//
 	//**CLOSE LIGHTBOX ON CLICK  */
 const closeLightBox = document.getElementById('close-lightbox')
-closeLightBox.setAttribute("aria-label", "fermer l'aperçu")
+closeLightBox.setAttribute("aria-label", "close dialog")
 	closeLightBox.addEventListener('click', () => {
 		if((document.querySelector(".pic-name-bloc"))) {
 			lightbox.removeChild(document.querySelector(".pic-name-bloc"));
@@ -365,15 +374,15 @@ closeLightBox.setAttribute("aria-label", "fermer l'aperçu")
 function contactFunction(photographers) {
 
 const closeCrossButton = document.querySelector('#close');
-closeCrossButton.setAttribute("aria-label", "fermer le formulaire de contact")
+closeCrossButton.setAttribute("aria-label", "Close Contact Form")
 const contactMeButton = document.querySelector('.contact-me');
-contactMeButton.setAttribute("aria-label", "boutton contacter moi")
 const contactModal = document.getElementById('modal');
 const mainContainer = document.querySelector('.main-container');
 const firstName = document.getElementById('prenom');
 const lastName = document.getElementById('nom');
 const email = document.getElementById('email');
 const sendButton = document.querySelector('.send');
+sendButton.setAttribute("aria-label", "send")
 const inputField = document.querySelectorAll('input');
 
 firstName.addEventListener('input', () => {});

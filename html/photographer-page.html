@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8" />
@@ -20,20 +20,20 @@
     <img id="close" src="/image/cross.png" alt="" />
     <div class="firstname">
       <label for="prenom">Prénom</label>
-      <input type="prenom" id="prenom" name="prenom" required minlength="4" maxlength="8" size="10" />
+      <input type="text" id="prenom" name="prenom" required minlength="4" maxlength="8" size="10" />
     </div>
     <div class="lastname">
       <label for="nom">Nom</label>
-      <input type="nom" id="nom" name="nom" required minlength="4" maxlength="8" size="10" />
+      <input type="text" id="nom" name="nom" required minlength="4" maxlength="8" size="10" />
     </div>
 
     <div class="mail">
       <label for="email">Email</label>
-      <input type="email" id="email" name="email" required minlength="4" maxlength="8" size="10" />
+      <input type="text" id="email" name="email" required minlength="4" maxlength="8" size="10" />
     </div>
 
     <div class="user-message">
-      <label for="votre-message">Votre message</label>
+      <label for="user_message">Votre message</label>
       <textarea id="user_message" name="user_message" rows="10" cols="20">
             </textarea>
     </div>
@@ -63,20 +63,26 @@
         </div>
         <button class="contact-me">Contactez-moi</button>
       </header>
-      <div class="short-by">
-        <label for="short-by">Trier par</label>
+      <div class="sort-by">
+        <label for="sort-by">Trier par</label>
         <div class="dropdown-open">
-          <ul>
+          <img src="/image/images/upArrow.png" class="up_arrow_icon" alt="arrow icon">
+          
+          <ul class="popularityUl">
             <li>
               <button class="btnfilter">Popularité</button>
-              <img src="/image/images/upArrow.png" class="up_arrow_icon">
             </li>
-            <hr class="menu-underline"> 
-            </span>
+          </ul>
+            <span class="menu-underline"></span> 
+          <ul class="dateUL">         
             <li>
               <button class="btnfilter">Date</button>
             </li>
-            <hr class="menu-underline"> </span>
+
+          </ul>
+          <span class="menu-underline2"></span> 
+          <ul class="nameUL">
+          
             <li>
               <button class="btnfilter">Nom</button>
             </li>
@@ -87,11 +93,12 @@
       <div class="resume_like_price"></div>
     </main>
   </div>
+  <script src="/JS/photographer-page.js"></script>
+  <script src="/JS/form.js"></script>
+  <script src="/JS/sortBy.js"></script>
+  <script src="/JS/lightbox.js"></script>
 
 </body>
-<script src="/JS/photographer-page.js"></script>
-<script src="/JS/form.js"></script>
-<script src="/JS/sortBy.js"></script>
-<script src="/JS/lightbox.js"></script>
+
 
 </html>

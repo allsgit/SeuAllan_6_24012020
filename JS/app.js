@@ -3,6 +3,7 @@ fetch('/JS/photograph-list.json')
 	.then((data) => {
 		tagAction(data.photographers);
 		displayPhotographers(data.photographers);
+		labelShow()
 
 	});
 
@@ -41,6 +42,9 @@ function displayPhotographers(photographers) {
 			photographerLocation.classList = 'photographer-location';
 			photographerTagLine.classList = 'photographer-tag';
 			photographerPrice.classList = 'photographer-price';
+
+			
+			
 	
 			// ***** PHOTOGRAPHER URL *******
 			const url = document.createElement('a');
@@ -55,13 +59,19 @@ function displayPhotographers(photographers) {
 	
 			url.appendChild(photoId_pic);
 			url.appendChild(photographerName);
-			url.appendChild(photographerLocation);
-			url.appendChild(photographerPrice);
-			url.appendChild(photographerTagLine);
+
 	
 			photographerTagLine.innerText = element.tagline;
 			photographerLocation.innerText = `${element.city} , ${element.country}`;
 			photographerPrice.innerText = `${element.price} €/ jours`;
+			
+			const information = document.createElement("div")
+			information.classList = ("information");
+			information.appendChild(photographerLocation)
+			information.appendChild(photographerTagLine)
+			information.appendChild(photographerPrice)
+			
+			thumBofPhotographer.appendChild(information)
 	
 			// ****** PHOTOGRAPHER TAGS ******
 			const photographerTag = document.createElement('div');
@@ -80,6 +90,7 @@ function displayPhotographers(photographers) {
 
 function tagAction(photographers) {
 	const navTag = document.querySelector('nav');
+	navTag.setAttribute("aria-label", "photographer catégories")
 
 	const allTags = photographers.reduce((acc, curr) => {
 		acc.push(...curr.tags); // "..." chaque élément à la suite
@@ -108,5 +119,25 @@ function tagAction(photographers) {
 		navTag.appendChild(filterButton);
 	});
 }
+function labelShow () {
+	const labelButton  = document.querySelector(".label")
+	window.addEventListener("scroll", () => {
+		const scrolled = window.scrollY
+		
+		console.log(scrolled);
+		if (scrolled > 114) {
+			labelButton.style.display = "block"
+	
+		} else {
+			labelButton.style.display = "none"
+		}
+	})
+	labelButton.addEventListener('click', () => {
+		document.body.scrollTop = 0
+		document.documentElement.scrollTop = 0;
+	})
+
+}
+
 
 

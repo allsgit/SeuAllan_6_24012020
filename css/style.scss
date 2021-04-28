@@ -52,7 +52,7 @@ nav {
 .label {
 	width: 198px;
 	height: 30px;
-	position: absolute;
+	position: fixed;
 	background-color: white;
 	left: 49%;
 	background: $primaryFontColor;
@@ -62,8 +62,7 @@ nav {
 	font-size: 18px;
 	font-weight: 700;
 	text-align: center;
-
-	//display: none;
+	display: none;
 }
 
 .searchButton {
@@ -169,21 +168,28 @@ main {
 			line-height: 13.04px;
 			font-size: 10px;
 		}
-
+		.information{
+			text-align: center;
 		.photographer-location {
 			margin-top: 17px;
 			color: $primaryBackgroundColor;
 			font-weight: 400;
+			font-size: 13px;
+			margin-bottom: 0px;
 		}
 
 		.photographer-tag {
 			color: black;
+			font-size: 10px;
+			margin: 2px;
 		}
 
 		.photographer-price {
 			font-size: 9px;
 			color: #757575;
+			margin-top: 2px;
 		}
+	}
 	}
 }
 
@@ -296,6 +302,11 @@ main {
 		margin: 26px 0 0 35px;
 		outline: none;
 		cursor: pointer;
+		transition: 0.5s;
+			&:hover{
+				background-color: #d3573c;
+				color: black;
+			}
 	}
 
 	#close {
@@ -355,7 +366,8 @@ main {
 		transition: 0.3s;
 
 		&:hover {
-			background-color: rgb(190, 76, 76);
+			background-color: #D3573c;
+			color: black;
 		}
 	}
 
@@ -377,7 +389,7 @@ main {
 	}
 }
 
-.short-by {
+.sort-by {
 	position: relative;
 	font-weight: 700;
 	margin-left: 100px;
@@ -389,8 +401,9 @@ main {
 	position: absolute;
 	display: flex;
 	justify-content: center;
+	flex-direction: column;
 	left: 60px;
-	height: 62px;
+	height: 55px;
 
 	//height: 170px;
 	width: 160px;
@@ -404,26 +417,49 @@ main {
 	transition: 0.3s;
 	z-index: 1000;
 
+	.dateUL{
+		position: absolute;
+		top: 65px;
+		left: 31px;
+	}
+	.nameUL{
+		position: absolute;
+		top: 120px;
+		left: 31px;
+	}
+	.popularityUl{
+		position: absolute;
+		top: 10px;
+		left: 13px;
+	}
+
+
+
 	.btnfilter {
 		background-color: transparent;
 		color: white;
 		font-weight: 700;
-		z-index: 10000;
 	}
 
 	.up_arrow_icon {
 		transition: 0.2s;
 		cursor: pointer;
+		position: absolute;
+		right: 15px;
+    	top: 22px;
+		z-index: 99999;
 	}
 
 	ul {
-		margin: O;
 		padding: 0;
 		width: 100%;
 		font-weight: 700;
 		list-style: none;
 		text-decoration: none;
 		text-align: left;
+		margin-top: 0;
+        top: 9px;
+		position: absolute;
 
 		:first-child {
 			display: flex;
@@ -438,20 +474,34 @@ main {
 		}
 
 		li:not(.trait) {
-			line-height: 23, 44px;
+			line-height: 23.44px;
 			margin: 10px 0 20px;
 			padding-left: 20px;
 		}
 	}
 }
 
-.menu-underline {
+.menu-underline{
 	height: 1px;
 	width: 130px;
 	border: none;
 	background-color: #ffffff;
 	z-index: 100000;
+	position: absolute;
+	top: 57px;
+	left: 12px;
 }
+.menu-underline2{
+	height: 1px;
+	width: 130px;
+	border: none;
+	background-color: #ffffff;
+	z-index: 100000;
+	position: absolute;
+	top: 110px;
+	left: 12px;
+}
+
 
 .thumb-section {
 	display: flex;
@@ -731,7 +781,6 @@ main {
 	}
 
 	.id-picture {
-		margin-left: none;
 		width: 100px;
 		height: 100px;
 		border-radius: 50%;
@@ -791,7 +840,7 @@ main {
 
 		img {
 			width: 150px;
-			height: 37, 5px;
+			height: 37.5px;
 		}
 	}
 
@@ -852,7 +901,7 @@ main {
 
 		label {
 			font-size: 18px;
-			margin: 14 0 6px 0;
+			margin: 14px 0 6px 0;
 		}
 
 		input,
@@ -898,11 +947,14 @@ main {
 		}
 
 		.send {
-    width: 170px;
-    height: 35px;
-    position: absolute;
-    bottom: 24px;
-    right: 85px;
+    	width: 170px;
+    	height: 35px;
+    	position: absolute;
+    	bottom: 24px;
+    	right: 85px;
+			&:hover{
+				background-color: #d3573c;
+			}
 		}
 	}
 
@@ -978,7 +1030,7 @@ main {
 		padding: 0 8px;
 	}
 
-	.short-by {
+	.sort-by {
 		display: none;
 	}
 
@@ -1043,7 +1095,7 @@ main {
 
 		label {
 			font-size: 24px;
-			margin: 14 0 6px 0;
+			margin: 0 0 6px 0;
 		}
 
 		input,
@@ -1115,7 +1167,7 @@ main {
 
 		img {
 			width: 150px;
-			height: 37, 5px;
+			height: 37.5px;
 		}
 	}
 
@@ -1224,7 +1276,7 @@ main {
 		padding: 0 8px;
 	}
 
-	.short-by {
+	.sort-by {
 		display: none;
 	}
 
@@ -1316,7 +1368,7 @@ main {
 
 		img {
 			width: 150px;
-			height: 37, 5px;
+			height: 37.5px;
 		}
 	}
 
@@ -1372,7 +1424,7 @@ main {
 	// //@at-root
 
 	* {
-		margin: none;
+		margin: 0;
 		padding: 0;
 	}
 
@@ -1383,7 +1435,7 @@ main {
 
 		label {
 			font-size: 24px;
-			margin: 14 0 6px 0;
+			margin: 0 0 6px 0;
 		}
 
 		input,
@@ -1507,7 +1559,7 @@ main {
 		padding: 0 8px;
 	}
 
-	.short-by {
+	.sort-by {
 		display: none;
 	}
 
@@ -1587,7 +1639,7 @@ main {
 
 		img {
 			width: 150px;
-			height: 37, 5px;
+			height: 37.5px;
 		}
 	}
 
@@ -1643,7 +1695,7 @@ main {
 	// //@at-root
 
 	* {
-		margin: none;
+		margin: 0;
 		padding: 0;
 	}
 
@@ -1654,7 +1706,7 @@ main {
 
 		label {
 			font-size: 24px;
-			margin: 14 0 6px 0;
+			margin: 0 0 6px 0;
 		}
 
 		input,
@@ -1781,7 +1833,7 @@ main {
 		padding: 0 8px;
 	}
 
-	.short-by {
+	.sort-by {
 		display: none;
 	}
 
@@ -1866,7 +1918,7 @@ main {
   
 		  img {
 			  width: 150px;
-			  height: 37, 5px;
+			  height: 37.5px;
 		  }
 	  }
   
@@ -1922,7 +1974,7 @@ main {
 	  // //@at-root
   
 	  * {
-		  margin: none;
+		  margin: 0;
 		  padding: 0;
 	  }
   
@@ -1934,7 +1986,7 @@ main {
   
 		  label {
 			  font-size: 24px;
-			  margin: 14 0 6px 0;
+			  margin: 0 0 6px 0;
 		  }
   
 		  input,
@@ -2062,7 +2114,7 @@ main {
 		  padding: 0 8px;
 	  }
   
-	  .short-by {
+	  .sort-by {
 		  display: none;
 	  }
   

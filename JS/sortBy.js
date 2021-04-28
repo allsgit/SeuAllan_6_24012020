@@ -14,7 +14,7 @@ sortByButton.addEventListener ('click', () => {
     sortByButton.style.transform = 'rotate(180deg)';
     isSetMenuOpen = true;
   } else {
-    sortByMenu.style.height = '62px';
+    sortByMenu.style.height = '55px';
     sortByButton.style.transform = 'rotate(0deg)';
     isSetMenuOpen = false;
   }
