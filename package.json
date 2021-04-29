@@ -1,11 +1,11 @@
 {
   "name": "p6--fisheyes",
   "version": "1.0.0",
-  "description": "fish eyes",
-  "main": "index.js",
+  "description": "fisheyes",
+  "main": "app.js",
   "dependencies": {},
   "devDependencies": {
-    "eslint": "^7.24.0"
+    "eslint": "^7.25.0"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -19,5 +19,5 @@
   "bugs": {
     "url": "https://github.com/allsgit/fisheyes/issues"
   },
-  "homepage": "https://github.com/allsgit/124578965478"
+  "homepage": "https://github.com/allsgit/fisheyes#readme"
 }
