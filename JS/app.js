@@ -10,7 +10,6 @@ fetch('/JS/photograph-list.json')
 const getFirstName = (name) => {
 	return name.split(' ')[0].replace('-', ' ');
 };
-
 function displayPhotographers(photographers) {
 	const mainSection = document.querySelector('.main-section'); // selectionne thumb
 	mainSection.innerHTML = '';
@@ -86,8 +85,7 @@ function displayPhotographers(photographers) {
 			}
 		
 	})
-}
-
+};
 function tagAction(photographers) {
 	const navTag = document.querySelector('nav');
 	navTag.setAttribute("aria-label", "photographer catégories")
@@ -102,10 +100,10 @@ function tagAction(photographers) {
 	distinctTags.map((tag) => {
 		const filterButton = document.createElement('button');
 		filterButton.className = 'searchButton';
-		filterButton.innerText = tag;
+		filterButton.innerText = `#${tag}`;
 
+        // filter by tags
 		filterButton.addEventListener('click', () => {
-			console.log(tag);
 
 			const displayChanger = document.querySelector('.main-section');
 			displayChanger.style.justifyContent = 'center';
@@ -118,13 +116,13 @@ function tagAction(photographers) {
 		});
 		navTag.appendChild(filterButton);
 	});
-}
+};
 function labelShow () {
 	const labelButton  = document.querySelector(".label")
 	window.addEventListener("scroll", () => {
 		const scrolled = window.scrollY
 		
-		console.log(scrolled);
+
 		if (scrolled > 114) {
 			labelButton.style.display = "block"
 	
@@ -137,7 +135,7 @@ function labelShow () {
 		document.documentElement.scrollTop = 0;
 	})
 
-}
+};
 
 
 

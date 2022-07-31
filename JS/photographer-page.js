@@ -58,7 +58,7 @@ function createHeader(photographers) {
 				profile.appendChild(tagButton);
 			});
 		});
-}
+};
 // NOTE // * CREATE GALLERY ****/
 function createGallery(media) {
 	media
@@ -146,6 +146,7 @@ function createGallery(media) {
 				// increment like function
 				const heartIcon = document.createElement('img');
 				heartIcon.classList = 'heart-icon';
+				heartIcon.setAttribute('alt', 'like');
 				heartIcon.setAttribute("tabindex", "2")
 				galleryPic.appendChild(heartIcon);
 				heartIcon.src = '/image/heart.png';
@@ -164,7 +165,7 @@ function createGallery(media) {
 				});
 			}
 		});
-}
+};
 // NOTE  // * CREATE BOTTOM COUNTER **** //
 function totalLike(media, photographers) {
 	const likeResume = document.querySelector('.resume_like_price');
@@ -212,7 +213,7 @@ function totalLike(media, photographers) {
 			}
 		});
 	});
-}
+};
 // NOTE // * "FILTER BY" IN MENU **** //
 function filterBy(media, photographers) {
 	media.filter((photo) => photo.photographerId == idPhotographer);
@@ -240,7 +241,7 @@ function filterBy(media, photographers) {
 			totalLike(mediaSorted, photographers);
 		});
 	});
-}
+};
 // NOTE // * LIGHTBOX FUNCTION **** //
 function lightBoxShow(media) {
 	const lightbox = document.querySelector('.lightBox-container');
@@ -422,7 +423,7 @@ function lightBoxShow(media) {
 
 		lightbox.style.display = 'none';
 	});
-}
+};
 // NOTE // SHOW CONTACT MODAL + CONSOLE FUNCTION **** //
 function contactFunction(photographers) {
 	const closeCrossButton = document.querySelector('#close');
@@ -501,4 +502,4 @@ function contactFunction(photographers) {
 			contactModal.insertBefore(contactName, contactModal.children[2]);
 			contactName.innerText = element.name;
 		});
-}
+};
