@@ -1,4 +1,4 @@
-fetch('/JS/photograph-list.json')
+fetch('JS/photograph-list.json')
 	.then((response) => response.json())
 	.then((data) => {
 		tagAction(data.photographers);
