@@ -5,7 +5,7 @@ const photographerUrl = new URLSearchParams(queryString);
 const idPhotographer = photographerUrl.get('photographerid');
 const namePhotographer = photographerUrl.get('photographername');
 
-fetch('/JS/photograph-list.json')
+fetch('JS/photograph-list.json')
 	.then((response) => response.json())
 	.then((data) => {
 		createHeader(data.photographers);
@@ -58,7 +58,7 @@ function createHeader(photographers) {
 				profile.appendChild(tagButton);
 			});
 		});
-};
+}
 // NOTE // * CREATE GALLERY ****/
 function createGallery(media) {
 	media
@@ -79,10 +79,7 @@ function createGallery(media) {
 				photographerPic.classList = 'pictures';
 				photographerPic.setAttribute('aria-label', 'photographie');
 				photographerPic.src = `/image/${namePhotographer}/${element.image}`;
-				photographerPic.setAttribute(
-					'aria-label',
-					`${replacedName}, closeup view`
-				);
+				photographerPic.setAttribute('aria-label', `${replacedName}, closeup view`);
 				// Name of picture
 				const picName = document.createElement('p');
 				picName.classList = 'picture_name';
@@ -129,10 +126,7 @@ function createGallery(media) {
 				thumbSection.appendChild(galleryPic);
 				galleryPic.appendChild(photographerPic);
 				photographerPic.classList = 'pictures';
-				photographerPic.setAttribute(
-					'aria-label',
-					`${replacedName}, closeup view`
-				);
+				photographerPic.setAttribute('aria-label', `${replacedName}, closeup view`);
 				photographerPic.src = `/image/${namePhotographer}/${element.video}`;
 				// Name of video
 				const picName = document.createElement('p');
@@ -147,7 +141,7 @@ function createGallery(media) {
 				const heartIcon = document.createElement('img');
 				heartIcon.classList = 'heart-icon';
 				heartIcon.setAttribute('alt', 'like');
-				heartIcon.setAttribute("tabindex", "2")
+				heartIcon.setAttribute('tabindex', '2');
 				galleryPic.appendChild(heartIcon);
 				heartIcon.src = '/image/heart.png';
 
@@ -165,7 +159,7 @@ function createGallery(media) {
 				});
 			}
 		});
-};
+}
 // NOTE  // * CREATE BOTTOM COUNTER **** //
 function totalLike(media, photographers) {
 	const likeResume = document.querySelector('.resume_like_price');
@@ -182,10 +176,10 @@ function totalLike(media, photographers) {
 	likeResume.appendChild(pricePerDay);
 	// PRICE PER DAY
 	photographers
-	.filter((photo) => photo.id.toString() === idPhotographer)
-	.map((element) => {
-		pricePerDay.innerText = `${element.price} €/jour`;
-	});
+		.filter((photo) => photo.id.toString() === idPhotographer)
+		.map((element) => {
+			pricePerDay.innerText = `${element.price} €/jour`;
+		});
 	const likeArray = [];
 	let totalLikeBottom;
 	// NOTE //* SUM OF LIKES ON THE BOTTOM **** //
@@ -193,8 +187,7 @@ function totalLike(media, photographers) {
 		.filter((photo) => photo.photographerId == idPhotographer)
 		.map((element) => {
 			likeArray.push(element.likes);
-			const reducer = (accumulator, currentValue) =>
-				accumulator + currentValue;
+			const reducer = (accumulator, currentValue) => accumulator + currentValue;
 
 			totalLikeBottom = likeArray.reduce(reducer);
 			LikeCounterFull.innerText = totalLikeBottom;
@@ -213,7 +206,7 @@ function totalLike(media, photographers) {
 			}
 		});
 	});
-};
+}
 // NOTE // * "FILTER BY" IN MENU **** //
 function filterBy(media, photographers) {
 	media.filter((photo) => photo.photographerId == idPhotographer);
@@ -228,20 +221,16 @@ function filterBy(media, photographers) {
 			if (event.target.innerText === 'Popularité') {
 				mediaSorted = media.sort((a, b) => b.likes - a.likes);
 			} else if (event.target.innerText === 'Date') {
-				mediaSorted = media.sort(
-					(a, b) => new Date(b.date) - new Date(a.date)
-				);
+				mediaSorted = media.sort((a, b) => new Date(b.date) - new Date(a.date));
 			} else if (event.target.innerText === 'Nom') {
-				mediaSorted = media.sort((a, b) =>
-					(a.video || a.image).localeCompare(b.image || b.video)
-				);
+				mediaSorted = media.sort((a, b) => (a.video || a.image).localeCompare(b.image || b.video));
 			}
 			createGallery(mediaSorted);
 			lightBoxShow(media);
 			totalLike(mediaSorted, photographers);
 		});
 	});
-};
+}
 // NOTE // * LIGHTBOX FUNCTION **** //
 function lightBoxShow(media) {
 	const lightbox = document.querySelector('.lightBox-container');
@@ -266,16 +255,12 @@ function lightBoxShow(media) {
 	arrayPictures.forEach((image) => {
 		image.addEventListener('click', (e) => {
 			acces(e);
-			document
-				.querySelector('.main-container')
-				.setAttribute('tabindex', '-1');
+			document.querySelector('.main-container').setAttribute('tabindex', '-1');
 		});
 		image.addEventListener('keydown', (e) => {
 			if (e.key == 'Enter') {
 				acces(e);
-				document
-					.querySelector('.main-container')
-					.setAttribute('tabindex', '-1');
+				document.querySelector('.main-container').setAttribute('tabindex', '-1');
 				document.querySelector('.main-container').style.visibility = 'hidden';
 			}
 		});
@@ -294,24 +279,12 @@ function lightBoxShow(media) {
 				img = document.createElement('video');
 				img.setAttribute('controls', '');
 				img.setAttribute('aria-label', 'video');
-				lightboxPicName.innerText = namelight[i].replace(
-					lightboxregexVideo,
-					' '
-				);
-				img.setAttribute(
-					'alt',
-					namelight[i].replace(lightboxregexVideo, ' ')
-				);
+				lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, ' ');
+				img.setAttribute('alt', namelight[i].replace(lightboxregexVideo, ' '));
 			} else {
 				img = document.createElement('img');
-				lightboxPicName.innerText = namelight[i].replace(
-					lightboxregex,
-					' '
-				);
-				img.setAttribute(
-					'alt',
-					namelight[i].replace(lightboxregex, ' ')
-				);
+				lightboxPicName.innerText = namelight[i].replace(lightboxregex, ' ');
+				img.setAttribute('alt', namelight[i].replace(lightboxregex, ' '));
 			}
 
 			img.src = e.target.src;
@@ -339,26 +312,14 @@ function lightBoxShow(media) {
 					img = document.createElement('video');
 					img.setAttribute('controls', '');
 					lightBoxBox.appendChild(img);
-					img.setAttribute(
-						'alt',
-						namelight[i].replace(lightboxregexVideo, ' ')
-					);
-					lightboxPicName.innerText = namelight[i].replace(
-						lightboxregexVideo,
-						' '
-					);
+					img.setAttribute('alt', namelight[i].replace(lightboxregexVideo, ' '));
+					lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, ' ');
 				} else {
 					lightBoxBox.innerHTML = ' ';
 					img = document.createElement('img');
 					lightBoxBox.appendChild(img);
-					img.setAttribute(
-						'alt',
-						namelight[i].replace(lightboxregex, ' ')
-					);
-					lightboxPicName.innerText = namelight[i].replace(
-						lightboxregex,
-						' '
-					);
+					img.setAttribute('alt', namelight[i].replace(lightboxregex, ' '));
+					lightboxPicName.innerText = namelight[i].replace(lightboxregex, ' ');
 				}
 				img.src = pictures[i].src;
 			}
@@ -377,26 +338,14 @@ function lightBoxShow(media) {
 					img = document.createElement('video');
 					img.setAttribute('controls', '');
 					lightBoxBox.appendChild(img);
-					img.setAttribute(
-						'alt',
-						namelight[i].replace(lightboxregexVideo, ' ')
-					);
-					lightboxPicName.innerText = namelight[i].replace(
-						lightboxregexVideo,
-						' '
-					);
+					img.setAttribute('alt', namelight[i].replace(lightboxregexVideo, ' '));
+					lightboxPicName.innerText = namelight[i].replace(lightboxregexVideo, ' ');
 				} else {
 					lightBoxBox.innerHTML = ' ';
 					img = document.createElement('img');
 					lightBoxBox.appendChild(img);
-					img.setAttribute(
-						'alt',
-						namelight[i].replace(lightboxregex, ' ')
-					);
-					lightboxPicName.innerText = namelight[i].replace(
-						lightboxregex,
-						' '
-					);
+					img.setAttribute('alt', namelight[i].replace(lightboxregex, ' '));
+					lightboxPicName.innerText = namelight[i].replace(lightboxregex, ' ');
 				}
 				img.src = pictures[i].src;
 			}
@@ -417,17 +366,16 @@ function lightBoxShow(media) {
 	closeLightBox.addEventListener('click', () => {
 		if (document.querySelector('.pic-name-bloc')) {
 			lightbox.removeChild(document.querySelector('.pic-name-bloc'));
-			document.querySelector('.main-container').style.visibility = "visible"
-
+			document.querySelector('.main-container').style.visibility = 'visible';
 		}
 
 		lightbox.style.display = 'none';
 	});
-};
+}
 // NOTE // SHOW CONTACT MODAL + CONSOLE FUNCTION **** //
 function contactFunction(photographers) {
 	const closeCrossButton = document.querySelector('#close');
-	const userMessage = document.querySelector('#user_message')
+	const userMessage = document.querySelector('#user_message');
 	closeCrossButton.setAttribute('aria-label', 'Close Contact Form');
 	const contactMeButton = document.querySelector('.contact-me');
 	const contactModal = document.getElementById('modal');
@@ -442,7 +390,7 @@ function contactFunction(photographers) {
 	firstName.addEventListener('input', () => {});
 	lastName.addEventListener('input', () => {});
 	email.addEventListener('input', () => {});
-	function sendCondition () {
+	function sendCondition() {
 		if (!lastName.value || !firstName.value || !email.value) {
 			console.log('veuillez remplir tous les champs');
 		} else {
@@ -454,44 +402,50 @@ function contactFunction(photographers) {
 		}
 	}
 	sendButton.addEventListener('click', () => {
-		sendCondition()
+		sendCondition();
 	});
 	sendButton.addEventListener('keydown', (e) => {
-		if (e.key === "Enter") {
-			sendCondition(e)
+		if (e.key === 'Enter') {
+			sendCondition(e);
 		}
 	});
 	// SHOW MODAL ON "CONTACTER MOI" BUTTON + CLOSE MODAL ON CROSS CLICK ****//
 	contactMeButton.addEventListener('click', showModal);
 	function showModal() {
-		contactModal.tabIndex = "0"
-		firstName.tabIndex = "1"
-		lastName.tabIndex = "1"
-		email.tabIndex = "1"
-		userMessage.tabIndex = "1"
-		sendButton.tabIndex = "1"
-		closeCrossButton.tabIndex = "2"
+		contactModal.tabIndex = '0';
+		firstName.tabIndex = '1';
+		lastName.tabIndex = '1';
+		email.tabIndex = '1';
+		userMessage.tabIndex = '1';
+		sendButton.tabIndex = '1';
+		closeCrossButton.tabIndex = '2';
 		contactModal.style.display = 'block';
 		contactModal.style.opacity = '1';
 		mainContainer.style.filter = 'blur(4px)';
-		document.querySelector(".dropdown-open").querySelectorAll ("button").forEach(element => {
-			element.tabIndex = "-1"
-		});
+		document
+			.querySelector('.dropdown-open')
+			.querySelectorAll('button')
+			.forEach((element) => {
+				element.tabIndex = '-1';
+			});
 	}
 	closeCrossButton.addEventListener('click', closeModal);
 	closeCrossButton.addEventListener('keydown', (e) => {
 		if (e.key == 'Enter') {
-		closeModal()
+			closeModal();
 		}
-	// CHANGE TABINDEX OF SORT-BY ELEMENT //
-	document.querySelector(".sort-by").tabIndex = "-1"
+		// CHANGE TABINDEX OF SORT-BY ELEMENT //
+		document.querySelector('.sort-by').tabIndex = '-1';
 	});
 	function closeModal() {
 		contactModal.style.display = 'none';
 		mainContainer.style.filter = 'blur(0px)';
-		document.querySelector(".dropdown-open").querySelectorAll ("button").forEach(element => {
-			element.tabIndex = "0"
-		});
+		document
+			.querySelector('.dropdown-open')
+			.querySelectorAll('button')
+			.forEach((element) => {
+				element.tabIndex = '0';
+			});
 	}
 	// PLACE Photographer name and "contacter moi" on modal
 	photographers
@@ -502,4 +456,4 @@ function contactFunction(photographers) {
 			contactModal.insertBefore(contactName, contactModal.children[2]);
 			contactName.innerText = element.name;
 		});
-};
+}
