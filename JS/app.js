@@ -25,7 +25,7 @@ function displayPhotographers(photographers) {
 
 			
 			const image = document.createElement('img');
-			image.src = `/image/Photographers ID Photos/${element.portrait}`;
+			image.src = `image/Photographers ID Photos/${element.portrait}`;
 			photoId_pic.appendChild(image);
 	
 			// ***** PHOTOGRAPHER NAME ******
@@ -49,7 +49,7 @@ function displayPhotographers(photographers) {
 			const url = document.createElement('a');
 			url.classList = 'description';
 			url.href =
-				'/html/photographer-page.html?photographerid=' +
+				'html/photographer-page.html?photographerid=' +
 				element.id +
 				'&photographername=' +
 				getFirstName(element.name);
