@@ -1,103 +1,139 @@
 <!DOCTYPE html>
 <html lang="fr">
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap"
+			rel="stylesheet"
+		/>
+		<link
+			href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap"
+			rel="stylesheet"
+		/>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <link rel="stylesheet" href="/css/style.css" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@700&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400&display=swap" rel="stylesheet" />
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@500&display=swap" rel="stylesheet" />
+		<title>Fish Eyes</title>
+	</head>
 
-  <title>Fish Eyes</title>
-</head>
+	<body>
+		<div id="modal">
+			<h1>Contactez moi</h1>
+			<img id="close" src="../image/cross.png" alt="" />
+			<div class="firstname">
+				<label for="prenom">Prénom</label>
+				<input
+					type="text"
+					id="prenom"
+					name="prenom"
+					required
+					minlength="4"
+					maxlength="8"
+					size="10"
+				/>
+			</div>
+			<div class="lastname">
+				<label for="nom">Nom</label>
+				<input
+					type="text"
+					id="nom"
+					name="nom"
+					required
+					minlength="4"
+					maxlength="8"
+					size="10"
+				/>
+			</div>
 
-<body>
+			<div class="mail">
+				<label for="email">Email</label>
+				<input
+					type="email"
+					id="email"
+					name="email"
+					required
+					minlength="4"
+					maxlength="20"
+					size="10"
+				/>
+			</div>
 
-  <div id="modal">
-    <h1>Contactez moi</h1>
-    <img id="close" src="../image/cross.png" alt="" />
-    <div class="firstname">
-      <label for="prenom">Prénom</label>
-      <input type="text" id="prenom" name="prenom" required minlength="4" maxlength="8" size="10" />
-    </div>
-    <div class="lastname">
-      <label for="nom">Nom</label>
-      <input type="text" id="nom" name="nom" required minlength="4" maxlength="8" size="10" />
-    </div>
+			<div class="user-message">
+				<label for="user_message">Votre message</label>
+				<textarea
+					id="user_message"
+					name="user_message"
+					rows="10"
+					cols="20"
+				>
+				</textarea>
+			</div>
 
-    <div class="mail">
-      <label for="email">Email</label>
-      <input type="email" id="email" name="email" required minlength="4" maxlength="20" size="10" />
-    </div>
+			<button class="send" type="submit">Envoyer</button>
+		</div>
+		<div class="lightBox-container">
+			<button class="navigation-back"></button>
+			<button class="navigation-next"></button>
+			<div class="lightBox-modal">
+				<p class="picture_name"></p>
+			</div>
+			<button id="close-lightbox"></button>
+		</div>
 
-    <div class="user-message">
-      <label for="user_message">Votre message</label>
-      <textarea id="user_message" name="user_message" rows="10" cols="20">
-            </textarea>
-    </div>
+		<div class="main-container">
+			<header>
+				<div class="logo">
+					<a href="../index.html">
+						<img
+							src="../image/images/Group.png"
+							alt="logo fish eyes"
+						/>
+					</a>
+				</div>
+			</header>
+			<main>
+				<header class="photographer-header">
+					<div class="photographer-profile"></div>
+					<button class="contact-me">Contactez-moi</button>
+				</header>
+				<div class="sort-by">
+					<label for="sort-by">Trier par</label>
+					<div class="dropdown-open">
+						<img
+							src="../image/images/upArrow.png"
+							class="up_arrow_icon"
+							alt="arrow icon"
+						/>
 
-    <button class="send" type="submit">Envoyer</button>
-  </div>
-  <div class="lightBox-container">
-    <button class="navigation-back"></button>
-    <button class="navigation-next"></button>
-    <div class="lightBox-modal">
-      <p class="picture_name"></p>
-    </div>
-    <button id="close-lightbox"></button>
-  </div>
-
-  <div class="main-container">
-    <header>
-      <div class="logo">
-        <a href="../index.html">
-          <img src="../image/images/Group.png" alt="logo fish eyes" />
-        </a>
-      </div>
-    </header>
-    <main>
-      <header class="photographer-header">
-        <div class="photographer-profile">
-        </div>
-        <button class="contact-me">Contactez-moi</button>
-      </header>
-      <div class="sort-by">
-        <label for="sort-by">Trier par</label>
-        <div class="dropdown-open">
-          <img src="../image/images/upArrow.png" class="up_arrow_icon" alt="arrow icon">
-          
-          <ul class="popularityUl">
-            <li>
-              <button class="btnfilter">Popularité</button>
-            </li>
-          </ul>
-            <span class="menu-underline"></span> 
-          <ul class="dateUL">         
-            <li>
-              <button class="btnfilter">Date</button>
-            </li>
-
-          </ul>
-          <span class="menu-underline2"></span> 
-          <ul class="nameUL">
-          
-            <li>
-              <button class="btnfilter">Nom</button>
-            </li>
-          </ul>
-        </div>
-      </div>
-      <section tabindex = "2" class="thumb-section"></section>
-      <div class="resume_like_price"></div>
-    </main>
-  </div>
-  <script src="../JS/photographer-page.js"></script>
-  <script src="../JS/sortBy.js"></script>
-
-
-</body>
-
-
+						<ul class="popularityUl">
+							<li>
+								<button class="btnfilter">Popularité</button>
+							</li>
+						</ul>
+						<span class="menu-underline"></span>
+						<ul class="dateUL">
+							<li>
+								<button class="btnfilter">Date</button>
+							</li>
+						</ul>
+						<span class="menu-underline2"></span>
+						<ul class="nameUL">
+							<li>
+								<button class="btnfilter">Nom</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+				<section tabindex="2" class="thumb-section"></section>
+				<div class="resume_like_price"></div>
+			</main>
+		</div>
+		<script src="../JS/photographer-page.js"></script>
+		<script src="../JS/sortBy.js"></script>
+	</body>
 </html>
