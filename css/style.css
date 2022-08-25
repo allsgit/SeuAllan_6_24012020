@@ -28,7 +28,7 @@ header, main .main-section {
   height: 43px;
   right: 225px;
   top: 100px;
-  background-image: url("/image/close_lightbox.png");
+  background-image: url("../image/close_lightbox.png");
   background-repeat: no-repeat;
   z-index: 1000;
   background-color: white;
@@ -81,7 +81,7 @@ header, main .main-section {
   width: 29px;
   height: 100%;
   margin: 0 200px;
-  background: url("/image/left-arrow.png") center center/29px 48px;
+  background: url("../image/left-arrow.png") center center/29px 48px;
   background-repeat: no-repeat;
   opacity: 0.9;
   -webkit-transition: 0.2s;
@@ -162,7 +162,7 @@ header, main .main-section {
     height: 11.53px;
     right: 17px;
     top: 250px;
-    background-image: url(/image/Vector.png);
+    background-image: url("../image/Vector.png");
     background-repeat: no-repeat;
     z-index: 1000;
     background-color: white;
@@ -172,7 +172,7 @@ header, main .main-section {
     width: 13.23px;
     height: 94%;
     margin: 0 27px;
-    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background: url("../image/responsive-left.png") center center/8px 13.23px;
     background-repeat: no-repeat;
     opacity: 0.9;
     -webkit-transition: 0.2s;
@@ -183,7 +183,7 @@ header, main .main-section {
     width: 13.23px;
     height: 94%;
     margin: 0 27px;
-    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background: url("../image/responsive-left.png") center center/8px 13.23px;
     background-repeat: no-repeat;
     opacity: 0.9;
     -webkit-transition: 0.2s;
@@ -220,7 +220,7 @@ header, main .main-section {
     height: 11.53px;
     right: 17px;
     top: 200px;
-    background-image: url(/image/Vector.png);
+    background-image: url("../image/Vector.png");
     background-repeat: no-repeat;
     z-index: 1000;
     background-color: white;
@@ -230,7 +230,7 @@ header, main .main-section {
     width: 13.23px;
     height: 94%;
     margin: 13px 27px;
-    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background: url("../image/responsive-left.png") center center/8px 13.23px;
     background-repeat: no-repeat;
     opacity: 0.9;
     -webkit-transition: 0.2s;
@@ -241,7 +241,7 @@ header, main .main-section {
     width: 13.23px;
     height: 94%;
     margin: 13px 27px;
-    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background: url("../image/responsive-left.png") center center/8px 13.23px;
     background-repeat: no-repeat;
     opacity: 0.9;
     -webkit-transition: 0.2s;
@@ -278,7 +278,7 @@ header, main .main-section {
     height: 11.53px;
     right: 1px;
     top: 160px;
-    background-image: url(/image/Vector.png);
+    background-image: url("../image/Vector.png");
     background-repeat: no-repeat;
     z-index: 1000;
     background-color: white;
@@ -288,7 +288,7 @@ header, main .main-section {
     width: 13.23px;
     height: 94%;
     margin: 18px 3px;
-    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background: url("../image/responsive-left.png") center center/8px 13.23px;
     background-repeat: no-repeat;
     opacity: 0.9;
     -webkit-transition: 0.2s;
@@ -299,7 +299,7 @@ header, main .main-section {
     width: 13.23px;
     height: 94%;
     margin: 13px 2px;
-    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background: url("../image/responsive-left.png") center center/8px 13.23px;
     background-repeat: no-repeat;
     opacity: 0.9;
     -webkit-transition: 0.2s;
@@ -336,7 +336,7 @@ header, main .main-section {
     height: 11.53px;
     right: 35px;
     top: 250px;
-    background-image: url(/image/Vector.png);
+    background-image: url("../image/Vector.png");
     background-repeat: no-repeat;
     z-index: 1000;
     background-color: white;
@@ -346,7 +346,7 @@ header, main .main-section {
     width: 13.23px;
     height: 94%;
     margin: 27px 40px;
-    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background: url("../image/responsive-left.png") center center/8px 13.23px;
     background-repeat: no-repeat;
     opacity: 0.9;
     -webkit-transition: 0.2s;
@@ -357,7 +357,7 @@ header, main .main-section {
     width: 13.23px;
     height: 94%;
     margin: 27px 40px;
-    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background: url("../image/responsive-left.png") center center/8px 13.23px;
     background-repeat: no-repeat;
     opacity: 0.9;
     -webkit-transition: 0.2s;
@@ -394,7 +394,7 @@ header, main .main-section {
     height: 11.53px;
     right: 21px;
     top: 250px;
-    background-image: url(/image/Vector.png);
+    background-image: url("../image/Vector.png");
     background-repeat: no-repeat;
     z-index: 1000;
     background-color: white;
@@ -404,7 +404,7 @@ header, main .main-section {
     width: 13.23px;
     height: 94%;
     margin: -5px 22px;
-    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background: url("../image/responsive-left.png") center center/8px 13.23px;
     background-repeat: no-repeat;
     opacity: 0.9;
     -webkit-transition: 0.2s;
@@ -415,7 +415,7 @@ header, main .main-section {
     width: 13.23px;
     height: 94%;
     margin: -5px 22px;
-    background: url(/image/responsive-left.png) center center/8px 13.23px;
+    background: url("../image/responsive-left.png") center center/8px 13.23px;
     background-repeat: no-repeat;
     opacity: 0.9;
     -webkit-transition: 0.2s;
