@@ -149,7 +149,7 @@ function createGallery(media) {
 				heartIcon.setAttribute('alt', 'like');
 				heartIcon.setAttribute('tabindex', '2');
 				galleryPic.appendChild(heartIcon);
-				heartIcon.src = '/image/heart.png';
+				heartIcon.src = '../image/heart.png';
 
 				let likes = element.likes;
 				const likeCounter = document.createElement('p');
